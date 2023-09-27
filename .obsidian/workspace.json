@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/handmade/ascii-web.md",
+                "file": "src/Tome1.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "src/handmade/ascii-web.md",
+                "file": "src/Tome1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "src/handmade/ascii-web.md",
+                "file": "src/Tome1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "src/handmade/ascii-web.md"
+                "file": "src/Tome1.md"
               }
             }
           },
@@ -154,15 +154,20 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
-      "obsidian-projects:Open projects": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false
+      "obsidian-projects:Open projects": false
     }
   },
   "active": "b44b47e6ddf4f7e8",
   "lastOpenFiles": [
     "src/SUMMARY.md",
+    "src/Tome1.md",
+    "src/greenwizard.jpeg",
+    "src/attachments/wizard4.jpeg",
+    "src/attachments/Wickedwizard.jpeg",
+    "src/attachments",
     "src/Reminder.md",
     "src/certs/oscp/Current/Active1.md",
     "src/certs/oscp/Current/Active2.md",
@@ -191,8 +196,6 @@
     "src/certs/CEH/24Sniffingandpoisoning.md",
     "src/certs/CEH/22MalwareThreatsTrojans.md",
     "src/certs/CEH/21Steganography.md",
-    "src/certs/CEH/20BufferOverflowPrivescSystemaccess.md",
-    "src/certs/CEH/18hackingmethod.md",
     "book/st3.",
     "book/certs/oscp/Passed/src/certs/oscp",
     "book/certs/oscp/Passed/src/certs",
@@ -201,14 +204,10 @@
     "book/certs/oscp",
     "book/certs",
     "book/add",
-    "book/elasticlunr.min.js",
     "book/certs/oscp/Current/img/Pasted image 20230617113623.png",
     "book/certs/oscp/Current/Mindmap.canvas",
     "theme/favicon.png",
     "src/battelle/Pasted image 20230801124928.png",
-    "theme/favicon.svg",
-    "src/certs/oscp/Passed/img/Pasted image 20230617114733.png",
-    "book/sidenote/images/Pasted image 20230712182142.png",
     "bulk/Prolab Graph.canvas"
   ]
 }

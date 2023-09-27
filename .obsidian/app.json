@@ -1,5 +1,5 @@
 {
   "alwaysUpdateLinks": true,
   "promptDelete": false,
-  "attachmentFolderPath": "src/certs/CEH/cehimage"
+  "attachmentFolderPath": "src/attachments"
 }
