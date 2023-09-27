@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "d1c0e95660057c6b",
+        "id": "cfb808076767881a",
         "type": "tabs",
         "children": [
           {
-            "id": "b44b47e6ddf4f7e8",
+            "id": "8b2d0657dfede812",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/Tome1.md",
+                "file": "src/Wizardintro.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "src/Tome1.md",
+                "file": "src/Wizardintro.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "src/Tome1.md",
+                "file": "src/Wizardintro.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "src/Tome1.md"
+                "file": "src/Wizardintro.md"
               }
             }
           },
@@ -160,13 +160,16 @@
       "obsidian-projects:Open projects": false
     }
   },
-  "active": "b44b47e6ddf4f7e8",
+  "active": "8b2d0657dfede812",
   "lastOpenFiles": [
-    "src/SUMMARY.md",
     "src/Tome1.md",
-    "src/greenwizard.jpeg",
-    "src/attachments/wizard4.jpeg",
+    "src/attachments/greenwizard.jpeg",
     "src/attachments/Wickedwizard.jpeg",
+    "src/Wizardintro.md",
+    "attachments/Wickedwizard.md",
+    "attachments",
+    "src/SUMMARY.md",
+    "src/attachments/wizard4.jpeg",
     "src/attachments",
     "src/Reminder.md",
     "src/certs/oscp/Current/Active1.md",
@@ -194,8 +197,6 @@
     "src/certs/CEH/25SocialEngineering.md",
     "src/certs/CEH/23Filelessmalware.md",
     "src/certs/CEH/24Sniffingandpoisoning.md",
-    "src/certs/CEH/22MalwareThreatsTrojans.md",
-    "src/certs/CEH/21Steganography.md",
     "book/st3.",
     "book/certs/oscp/Passed/src/certs/oscp",
     "book/certs/oscp/Passed/src/certs",
@@ -203,7 +204,6 @@
     "book/certs/oscp/Passed",
     "book/certs/oscp",
     "book/certs",
-    "book/add",
     "book/certs/oscp/Current/img/Pasted image 20230617113623.png",
     "book/certs/oscp/Current/Mindmap.canvas",
     "theme/favicon.png",
