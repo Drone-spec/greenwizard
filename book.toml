@@ -1,0 +1,20 @@
+[book]
+authors = ["Drone-Spec, drone_mothership@discord"]
+language = "en"
+multilingual = false
+src = "src"
+title = "A Wizards Tomes"
+
+
+[preprocessor.toc]
+command = "mdbook-toc"
+renderer = ["html"]
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+[output.html]
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
+cname="blog.dronemothership.work"
+
+[build]
+build-dir = "public"
