@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "7b282e0ddde5e03b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "src/Wizardintro.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -160,17 +173,33 @@
       "obsidian-projects:Open projects": false
     }
   },
-  "active": "8b2d0657dfede812",
+  "active": "7b282e0ddde5e03b",
   "lastOpenFiles": [
+    "public/FontAwesome/fonts/fontawesome-webfont.woff2",
+    "public/FontAwesome/fonts/fontawesome-webfont.woff",
+    "public/FontAwesome/fonts/fontawesome-webfont.ttf",
+    "public/FontAwesome/fonts/fontawesome-webfont.svg",
+    "public/FontAwesome/fonts/fontawesome-webfont.eot",
+    "public/FontAwesome/fonts/FontAwesome.ttf",
+    "public/FontAwesome/css/font-awesome.css",
+    "public/fonts/topaz.ttf",
+    "public/fonts/topaz.eot",
+    "public/fonts/fonts.css",
+    "public/css/variables.css",
+    "public/css/print.css",
+    "public/attachments/wizard4.jpeg",
+    "public/attachments/wizard3.jpeg",
+    "public/attachments/wizard1.jpeg",
+    "public/attachments/wizard2.jpeg",
+    "public/attachments/wizard.jpeg",
+    "public/attachments/greenwizard.jpeg",
+    "public/attachments/Wickedwizard.jpeg",
+    "public/favicon.svg",
+    "public/favicon.png",
     "src/Tome1.md",
-    "src/attachments/greenwizard.jpeg",
-    "src/attachments/Wickedwizard.jpeg",
     "src/Wizardintro.md",
     "attachments/Wickedwizard.md",
-    "attachments",
     "src/SUMMARY.md",
-    "src/attachments/wizard4.jpeg",
-    "src/attachments",
     "src/Reminder.md",
     "src/certs/oscp/Current/Active1.md",
     "src/certs/oscp/Current/Active2.md",
@@ -179,15 +208,10 @@
     "src/certs/oscp/Passed/st1.md",
     "src/handmade/ascii-web.md",
     "src/training/Basics/Networking.md",
-    "src/handmade",
     "src/certs/oswp/First Exam.md",
     "src/certs/osep/Training.md",
-    "src/battelle/2023-08-01_11-58.png",
     "src/battelle/Intro.md",
-    "src/battelle/Pasted image 20230801123846.png",
-    "src/battelle/Pasted image 20230801100310.png",
     "src/battelle/NETWORK.excalidraw.md",
-    "src/battelle/MBR.jpeg",
     "src/certs/oscp/Passed/st3.md",
     "src/certs/oscp/Passed/table.md",
     "src/training.md",
@@ -197,17 +221,7 @@
     "src/certs/CEH/25SocialEngineering.md",
     "src/certs/CEH/23Filelessmalware.md",
     "src/certs/CEH/24Sniffingandpoisoning.md",
-    "book/st3.",
-    "book/certs/oscp/Passed/src/certs/oscp",
-    "book/certs/oscp/Passed/src/certs",
-    "book/certs/oscp/Passed/src",
-    "book/certs/oscp/Passed",
-    "book/certs/oscp",
-    "book/certs",
-    "book/certs/oscp/Current/img/Pasted image 20230617113623.png",
     "book/certs/oscp/Current/Mindmap.canvas",
-    "theme/favicon.png",
-    "src/battelle/Pasted image 20230801124928.png",
     "bulk/Prolab Graph.canvas"
   ]
 }
