@@ -89,3 +89,10 @@ socat -d TCP4-LISTEN:80,reuseaddr,fork EXEC:"python3.11 ./ascii-web.py"
 ```
 
 Idea here is to allow the process to get forked. However I am also not sure if that is a good idea. Might allow the computer to be resource attacked by a bunch of connections just ZERG rushing it.
+
+Here is what the poor blue team would see waving back to them on a Terminal that they cannot clear! The only option is to kill the shell. 
+
+
+![Wizard_Render](attachments/ascii.jpg)
+
+
