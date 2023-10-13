@@ -89,3 +89,9 @@ socat -d TCP4-LISTEN:80,reuseaddr,fork EXEC:"python3.11 ./ascii-web.py"
 ```
 
 Idea here is to allow the process to get forked. However I am also not sure if that is a good idea. Might allow the computer to be resource attacked by a bunch of connections just ZERG rushing it.
+
+Below is recon for PTS terminal windows 
+```shell
+who -a;echo""; ps -aux | grep ".*pts.*"
+```
+

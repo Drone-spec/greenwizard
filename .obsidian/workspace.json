@@ -13,26 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/Wizardintro.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7b282e0ddde5e03b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "src/Wizardintro.md",
+                "file": "src/Tome2.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "src/Wizardintro.md",
+                "file": "src/Tome2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "src/Wizardintro.md",
+                "file": "src/Tome2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "src/Wizardintro.md"
+                "file": "src/Tome2.md"
               }
             }
           },
@@ -173,8 +160,21 @@
       "obsidian-projects:Open projects": false
     }
   },
-  "active": "7b282e0ddde5e03b",
+  "active": "8b2d0657dfede812",
   "lastOpenFiles": [
+    "src/attachments/Pasted image 20231005232627.png",
+    "src/attachments/Pasted image 20231005232257.png",
+    "src/attachments/Pasted image 20231005232132.png",
+    "src/attachments/Pasted image 20231005232038.png",
+    "src/attachments/Pasted image 20231005231850.png",
+    "src/attachments/Pasted image 20231005231302.png",
+    "src/attachments/Pasted image 20231005211129.png",
+    "src/Wizardintro.md",
+    "src/Tome2.md",
+    "attachments.md",
+    "src/SUMMARY.md",
+    "src/Tome1.md",
+    "src/attachments/Pastedimage20231005201455.png",
     "public/FontAwesome/fonts/fontawesome-webfont.woff2",
     "public/FontAwesome/fonts/fontawesome-webfont.woff",
     "public/FontAwesome/fonts/fontawesome-webfont.ttf",
@@ -186,20 +186,9 @@
     "public/fonts/topaz.eot",
     "public/fonts/fonts.css",
     "public/css/variables.css",
-    "public/css/print.css",
     "public/attachments/wizard4.jpeg",
     "public/attachments/wizard3.jpeg",
-    "public/attachments/wizard1.jpeg",
-    "public/attachments/wizard2.jpeg",
-    "public/attachments/wizard.jpeg",
-    "public/attachments/greenwizard.jpeg",
-    "public/attachments/Wickedwizard.jpeg",
-    "public/favicon.svg",
-    "public/favicon.png",
-    "src/Tome1.md",
-    "src/Wizardintro.md",
     "attachments/Wickedwizard.md",
-    "src/SUMMARY.md",
     "src/Reminder.md",
     "src/certs/oscp/Current/Active1.md",
     "src/certs/oscp/Current/Active2.md",
@@ -219,8 +208,6 @@
     "src/certs/CEH/27Applayerattacks.md",
     "src/certs/CEH/26DosProtocolattack.md",
     "src/certs/CEH/25SocialEngineering.md",
-    "src/certs/CEH/23Filelessmalware.md",
-    "src/certs/CEH/24Sniffingandpoisoning.md",
     "book/certs/oscp/Current/Mindmap.canvas",
     "bulk/Prolab Graph.canvas"
   ]
