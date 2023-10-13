@@ -94,4 +94,10 @@ Below is recon for PTS terminal windows
 ```shell
 who -a;echo""; ps -aux | grep ".*pts.*"
 ```
+---
+Here is what the poor blue team would see waving back to them on a Terminal that they cannot clear! The only option is to kill the shell. 
+
+
+![Wizard_Render](attachments/ascii.jpg)
+
 
