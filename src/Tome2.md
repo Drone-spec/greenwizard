@@ -5,7 +5,6 @@ Build a solution from Visual Studio code. C# project will do.
 
 Right click on the project and go to the build section.
 
-(!Picture)
 
 Load a payload into the pre-compile actions.
 Which can be found in the picture below. This is located at `*.csproj`
