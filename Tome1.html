@@ -214,8 +214,9 @@ wrapper(main)
 <pre><code class="language-shell">socat -d TCP4-LISTEN:80,reuseaddr,fork EXEC:&quot;python3.11 ./ascii-web.py&quot;
 </code></pre>
 <p>Idea here is to allow the process to get forked. However I am also not sure if that is a good idea. Might allow the computer to be resource attacked by a bunch of connections just ZERG rushing it.</p>
-<p>Here is what the poor blue team would see waving back to them on a Terminal that they cannot clear! The only option is to kill the shell. </p>
-<p><img src="attachments/ascii.jpg" alt="Wizard_Render" /></p>
+<p>Below is recon for PTS terminal windows </p>
+<pre><code class="language-shell">who -a;echo&quot;&quot;; ps -aux | grep &quot;.*pts.*&quot;
+</code></pre>
 
                     </main>
 
