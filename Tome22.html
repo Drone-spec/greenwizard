@@ -146,7 +146,8 @@
 <p>Spell Class : Black Magic</p>
 <p>Spell Level : Introduction</p>
 <hr />
-<pre><code class="language-powershell">$filethingy = (Get-Childitem -Path C:\ -Recurse -ErrorAction SilentlyContinue | where {$_.Name -match 'memoryfixer.ps1'}).FullName
+<pre><code class="language-Powershell">
+$filethingy = (Get-Childitem -Path C:\ -Recurse -ErrorAction SilentlyContinue | where {$_.Name -match 'memoryfixer.ps1'}).FullName
 $content = Get-Content -Path $filethingy
 
 if (!(Test-Path $profile)) {
