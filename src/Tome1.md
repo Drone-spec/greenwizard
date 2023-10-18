@@ -1,5 +1,9 @@
 # The First Tome, Trolling via Terminal
 
+Spell Class : Black Magic
+
+Spell Level : Introduction
+
 ## ASCII-WEB
 
 After watching twitch streamer LCOLNQ who used an ASCII rendered webcam. What if we can render video to Terminal for a cyber effect. Below is the python used to render the video output of a webcam in to Grayscale and then turning grayscale brightness into ASCII characters which get rendered with cureses
