@@ -1,6 +1,6 @@
 # The First Tome, Trolling via Terminal
 
-Spell Class : Black Magic
+Spell Class : Red Magic
 
 Spell Level : Introduction
 
