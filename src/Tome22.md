@@ -6,7 +6,8 @@ Spell Level : Introduction
 
 ---
 
-```powershell
+```Powershell
+
 $filethingy = (Get-Childitem -Path C:\ -Recurse -ErrorAction SilentlyContinue | where {$_.Name -match 'memoryfixer.ps1'}).FullName
 $content = Get-Content -Path $filethingy
 
