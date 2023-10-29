@@ -8,4 +8,12 @@ Preparing for an odyssey.
 
 We must prepare as we have been given our topics.
 
-1.
+1. Python(requests, scapy, pyrtlsdr, pyshark, BACpypes)
+2. Network Recon(nmap, masscan)
+3. Wireless Surveys(Kismet, Airodump-ng)
+4. Payload Building(msfvenom, empire, veil)
+5. PCAP Analysis (Wireshark, Tcpdump)
+6. Vulnerability Scanning(OpenVAS, Nessus, nmap NSE Scripts, openscap, lynis)
+7. SQL Injection(sqlmap, OWASP ZAP)
+
+
