@@ -1,0 +1,36 @@
+# QR Code Madness
+
+Young Wizards, discovered this wicked attack. Summoning the strength of the kids who pulled this off in the boston subway. We embarked on our journey to reverse the QR Code of transport.
+
+So we started the journey by going to the terminal and paying for a couple of 10 dollar rides. Looking at the values 
+
+```QR
+6400729e3965e803000000003a95d15e
+```
+This is a single QR code but check this. We broke this up into sections
+
+6400 729e 3965 e803 0000 0000 3a95 d15e
+
+ST   T     T    M    M    M    CRC CRC
+
+Static = ST
+Time = T 
+Money = M
+CRC
+
+So we had to figure out that all the variables are backwards this is important because later we have to by hand reverse our handmade checksum.
+
+We tried a TON of QRcode Generations that we found on a site that had PHP barcode generation. Turns out it was a red harring cast into our path. hell ya boy did we freaking fall for it hard. Moving on past that Jeff found the correct CRC checksum. 
+
+So what we do is take off the current Checksum and change the money amount. 
+
+I just set everything to 0f which because is backwards because we need to flip it for the QR to work. So we have Money in the bank, we need to generate the CRC using Cyberchef, From hex, CRC32, by hand reverse everything and append it to the end of the data,
+
+```code
+qrencode -o blarg -t SVG 6400fc913965a00f0f0f0f00fd4df88b
+feh blarg
+```
+
+and off to the races we go with a nice QRcode that we can scan which gives us a small 27million dollars and a cool victory code.
+
+
