@@ -7,7 +7,7 @@ The dreaded art of Embedded Systems.
 
 Lets thrown on some Time Fragment - 装甲艦 and learn some strangeness.
 
-Getting I had to order from the mages guild some ESP8266's, ESP32's, and some digikey sparks. With my small boards I had to learn about some rather simple but obscure knowledg![[Pasted image 20231213150721.png]]e to me. 
+Getting I had to order from the mages guild some ESP8266's, ESP32's, and some digikey sparks. With my small boards I had to learn about some rather simple but obscure knowledge.
 
 ### Inscriptions for an inscriber
 
@@ -15,11 +15,11 @@ A small bit of magic works between the main chip on the board and your computer.
 
 What these little dude do for you is convert between USB (Your Computer) and Serial (The ESP32, ESP8266 or whatever). This is our friend but we must know which friend we need to learn to speak with. I found out by asking my system. 
 
-![[Pasted image 20231213150721.png]]
+![Wizard_Render](attachments/lsusb.png)
 
 Using `sudo lsusb -t` you can get the above. I know I have ch341 that is handling that communication. I can also double check that I am able to see this device by looking in DEV.
 
-![[Pasted image 20231213151317.png]]
+![Wizard_Render](attachments/tty.png)
 
 Using `ls /dev` and I can see the ttyUSB0 device which would be present due to the UART to USB CH341 chip. 
 

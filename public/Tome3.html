@@ -4,8 +4,7 @@
 
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Page not found - A Wizards Tomes</title>
-        <base href="/">
+        <title>Tome three, Embedded magic - A Wizards Tomes</title>
 
 
         <!-- Custom HTML head -->
@@ -89,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Wizardintro.html"><strong aria-hidden="true">1.</strong> A Wizards Legacy</a></li><li class="chapter-item expanded "><a href="Tome1.html"><strong aria-hidden="true">2.</strong> Tome one, Terminal trolling</a></li><li class="chapter-item expanded "><a href="Tome22.html"><strong aria-hidden="true">3.</strong> Tome two, Powershell Hexing</a></li><li class="chapter-item expanded "><a href="Tome3.html"><strong aria-hidden="true">4.</strong> Tome three, Embedded magic</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Wizardintro.html"><strong aria-hidden="true">1.</strong> A Wizards Legacy</a></li><li class="chapter-item expanded "><a href="Tome1.html"><strong aria-hidden="true">2.</strong> Tome one, Terminal trolling</a></li><li class="chapter-item expanded "><a href="Tome22.html"><strong aria-hidden="true">3.</strong> Tome two, Powershell Hexing</a></li><li class="chapter-item expanded "><a href="Tome3.html" class="active"><strong aria-hidden="true">4.</strong> Tome three, Embedded magic</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -151,13 +150,29 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="document-not-found-404"><a class="header" href="#document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                        <h1 id="embedded-systems-and-you"><a class="header" href="#embedded-systems-and-you">Embedded systems and you</a></h1>
+<p>I am strung between many things at this point in my life. Listed as Armed and Dangerous, Fugitive wizard at large. Spending some time in the dungeons and finally getting to have my time before the tribunal was a great time to focus my wildly attention. I feel stronger and sharper as of late. Like I have a direction to follow once again. That direction has been pushing to delve once again into the topics I do not understand. </p>
+<p>The dreaded art of Embedded Systems. </p>
+<p>Lets thrown on some Time Fragment - 装甲艦 and learn some strangeness.</p>
+<p>Getting I had to order from the mages guild some ESP8266's, ESP32's, and some digikey sparks. With my small boards I had to learn about some rather simple but obscure knowledge.</p>
+<h3 id="inscriptions-for-an-inscriber"><a class="header" href="#inscriptions-for-an-inscriber">Inscriptions for an inscriber</a></h3>
+<p>A small bit of magic works between the main chip on the board and your computer. This might be a CH340 or <em>INSERT OTHER HERE</em></p>
+<p>What these little dude do for you is convert between USB (Your Computer) and Serial (The ESP32, ESP8266 or whatever). This is our friend but we must know which friend we need to learn to speak with. I found out by asking my system. </p>
+<p><img src="attachments/lsusb.png" alt="Wizard_Render" /></p>
+<p>Using <code>sudo lsusb -t</code> you can get the above. I know I have ch341 that is handling that communication. I can also double check that I am able to see this device by looking in DEV.</p>
+<p><img src="attachments/tty.png" alt="Wizard_Render" /></p>
+<p>Using <code>ls /dev</code> and I can see the ttyUSB0 device which would be present due to the UART to USB CH341 chip. </p>
+<h3 id="arduino-the-savior-for-beginning"><a class="header" href="#arduino-the-savior-for-beginning">Arduino the savior for beginning</a></h3>
+<p>Moving into the space of we understand our chip and our interface tool. We can now begin to attempt and pass instructions to this chip which should relay that to the ESP8266 in my situation. </p>
+<p><code>yay arduino</code> was all it took for me to install Arduino, if you are not using pacman or yay please find your own solution to this issue. </p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="Tome22.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
 
                         <div style="clear: both"></div>
@@ -166,6 +181,9 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="Tome22.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
             </nav>
 
