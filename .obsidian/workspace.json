@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/Tome2.md",
+                "file": "src/Tome3.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "src/Tome2.md",
+                "file": "src/Tome3.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "src/Tome2.md",
+                "file": "src/Tome3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "src/Tome2.md"
+                "file": "src/Tome3.md"
               }
             }
           },
@@ -162,6 +162,15 @@
   },
   "active": "8b2d0657dfede812",
   "lastOpenFiles": [
+    "src/attachments/Pasted image 20231213151317.png",
+    "src/attachments/Pasted image 20231213150721.png",
+    "src/attachments/Pastedimage20231005201455.png",
+    "src/Tome3.md",
+    "src/Tome1.md",
+    "src/ics/ics1.md",
+    "src/ics/grass_test.png",
+    "src/Tome22.md",
+    "src/Tome2.md",
     "src/attachments/Pasted image 20231005232627.png",
     "src/attachments/Pasted image 20231005232257.png",
     "src/attachments/Pasted image 20231005232132.png",
@@ -170,15 +179,11 @@
     "src/attachments/Pasted image 20231005231302.png",
     "src/attachments/Pasted image 20231005211129.png",
     "src/Wizardintro.md",
-    "src/Tome2.md",
     "attachments.md",
     "src/SUMMARY.md",
-    "src/Tome1.md",
-    "src/attachments/Pastedimage20231005201455.png",
     "public/FontAwesome/fonts/fontawesome-webfont.woff2",
     "public/FontAwesome/fonts/fontawesome-webfont.woff",
     "public/FontAwesome/fonts/fontawesome-webfont.ttf",
-    "public/FontAwesome/fonts/fontawesome-webfont.svg",
     "public/FontAwesome/fonts/fontawesome-webfont.eot",
     "public/FontAwesome/fonts/FontAwesome.ttf",
     "public/FontAwesome/css/font-awesome.css",
@@ -186,8 +191,6 @@
     "public/fonts/topaz.eot",
     "public/fonts/fonts.css",
     "public/css/variables.css",
-    "public/attachments/wizard4.jpeg",
-    "public/attachments/wizard3.jpeg",
     "attachments/Wickedwizard.md",
     "src/Reminder.md",
     "src/certs/oscp/Current/Active1.md",
@@ -205,9 +208,6 @@
     "src/certs/oscp/Passed/table.md",
     "src/training.md",
     "src/certs/CEH/34xsswebshellsapi.md",
-    "src/certs/CEH/27Applayerattacks.md",
-    "src/certs/CEH/26DosProtocolattack.md",
-    "src/certs/CEH/25SocialEngineering.md",
     "book/certs/oscp/Current/Mindmap.canvas",
     "bulk/Prolab Graph.canvas"
   ]
