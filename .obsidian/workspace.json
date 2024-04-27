@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "cfb808076767881a",
+        "id": "fb05bb7c29d1f3c3",
         "type": "tabs",
         "children": [
           {
-            "id": "8b2d0657dfede812",
+            "id": "32a18005c7f037dc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/Tome3.md",
+                "file": "src/Tome4.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "src/Tome3.md",
+                "file": "src/Tome4.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "src/Tome3.md",
+                "file": "src/Tome4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "src/Tome3.md"
+                "file": "src/Tome4.md"
               }
             }
           },
@@ -135,7 +135,9 @@
             "state": {
               "type": "all-properties",
               "state": {
-                "sortOrder": "frequency"
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
           }
@@ -160,38 +162,41 @@
       "obsidian-projects:Open projects": false
     }
   },
-  "active": "8b2d0657dfede812",
+  "active": "32a18005c7f037dc",
   "lastOpenFiles": [
+    "src/SUMMARY.md",
+    "Excalidraw/Drawing 2024-02-12 13.50.21.excalidraw.md",
+    "Excalidraw",
+    "src/Tome4.md",
+    "src/Tome3.md",
+    "src/attachments/MOTW.png",
+    "src/attachments/wizard3.jpeg",
+    "src/attachments/wizard4.jpeg",
+    "src/attachments/wizard2.jpeg",
+    "src/attachments/wizard1.jpeg",
+    "src/attachments/wizard.jpeg",
+    "src/attachments/Wickedwizard.jpeg",
+    "src/attachments/Pasted image 20231005211129.png",
+    "attachments/Wickedwizard.md",
+    "attachments/'Pasted.md",
+    "attachments/Pasted.md",
+    "src/attachments/Pasted image 20231005231302.png",
+    "src/attachments/Pastedimage20231005201455.png",
+    "src/Tome22.md",
+    "src/Wizardintro.md",
+    "src/Tome2.md",
     "public/elasticlunr.min.js",
     "public/searchindex.json",
-    "src/attachments/Pastedimage20231005201455.png",
-    "src/attachments/tty.png",
-    "public/attachments/wizard4.jpeg",
-    "public/attachments/wizard3.jpeg",
-    "public/attachments/wizard2.jpeg",
-    "public/attachments/wizard1.jpeg",
-    "public/attachments/wizard.jpeg",
-    "public/attachments/tty.png",
-    "public/attachments/lsusb.png",
-    "public/attachments/greenwizard.jpeg",
     "public/attachments",
     "public/mark.min.js",
     "public/searcher.js",
-    "attachments/'Pasted.md",
-    "src/Tome3.md",
     "public/clipboard.min.js",
     "public/css/print.css",
     "public/css/variables.css",
     "public/css/general.css",
-    "public/css/chrome.css",
     "src/Tome1.md",
     "src/ics/ics1.md",
-    "src/Tome22.md",
-    "src/Tome2.md",
-    "src/Wizardintro.md",
     "attachments.md",
-    "src/SUMMARY.md",
-    "attachments/Wickedwizard.md",
     "src/Reminder.md",
     "src/certs/oscp/Current/Active1.md",
     "src/certs/oscp/Current/Active2.md",
@@ -205,8 +210,6 @@
     "src/battelle/Intro.md",
     "src/battelle/NETWORK.excalidraw.md",
     "src/certs/oscp/Passed/st3.md",
-    "src/certs/oscp/Passed/table.md",
-    "src/training.md",
     "book/certs/oscp/Current/Mindmap.canvas",
     "bulk/Prolab Graph.canvas"
   ]

@@ -28,4 +28,21 @@ Using `ls /dev` and I can see the ttyUSB0 device which would be present due to t
 
 Moving into the space of we understand our chip and our interface tool. We can now begin to attempt and pass instructions to this chip which should relay that to the ESP8266 in my situation. 
 
-`yay arduino` was all it took for me to install Arduino, if you are not using pacman or yay please find your own solution to this issue. 
+`yay arduino` was all it took for me to install Arduino, if you are not using pacman or yay please find your own solution to this issue. After spending some time working with ESP8266's and making some little wifi point that can be used for new students to practice wifi hacking. It really is a great platform for development. It can take some setting up but once you do it a couple of times it does make for a nice setup.
+
+---
+
+## Embedded Shinanigans
+
+Figuring out some nice project I watched the michael reeves video on making a little turret. It was funny but it was also a increadbly simple project to do with a lot of fun to motivate you to complete it. Which in if you have not taking note of yet. Fun is often the determination of completion or not. You can chase a project but once you learn what you need you tend to drop a project unless it has some fun to it in which you often will push to completion.
+
+So we have an X and a Y we must focus on. 
+[-] X is how we will turn Left and Right.
+[-] Y is how we will move up and down.
+
+With these two and a small laser we can show our ability to send and process data.. I am using Rust as my main way of processing computer data and then all the arduino has to do is intake information and adjust the motors/servos to reflect the values..
+
+
+I know from michaels video he had an issue with the arudino being unable to process the amount of information being sent. So I want to lower the amount of processing we send to the arduino..
+
+So some kind of checking system to manage sending updates.. So I am thinking something like "Hey I have information" -> "Okay well if its not greater than x% of change then we will not send it" -> "If it is then we will send it" I am thinking while this might reduce accuracy it will lower the load on the arduino...

@@ -20,3 +20,7 @@ MSDN in its classic Necronomicon like nature will hint but never outright tell u
 https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537183(v=vs.85)
 
 But we can see the structure is the same as the methods used for Safe internet browsing. 
+
+So its been a bit and coming back to this it is making less sense for this to be done from outside the domain. However, I will never discount the method. Its just becoming more and more difficult for people to click enable macro's now that is to say once you make entry on a network being sent from internal is a really nice strat. Doing the OSEP has you do something similar but I enjoy the process of enumerating users via the mail server with manual interaction.
+
+
