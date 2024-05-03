@@ -4,7 +4,8 @@ language = "en"
 multilingual = false
 src = "src"
 title = "A Wizards Tomes"
-
+default-theme = "coal"
+preferred-dark-theme = "navy"
 
 [preprocessor.toc]
 command = "mdbook-toc"
