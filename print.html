@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Wizardintro.html"><strong aria-hidden="true">1.</strong> A Wizards Legacy</a></li><li class="chapter-item expanded "><a href="Tome1.html"><strong aria-hidden="true">2.</strong> Tome one, Terminal trolling</a></li><li class="chapter-item expanded "><a href="Tome22.html"><strong aria-hidden="true">3.</strong> Tome two, Powershell Hexing</a></li><li class="chapter-item expanded "><a href="Tome3.html"><strong aria-hidden="true">4.</strong> Tome three, Embedded magic</a></li><li class="chapter-item expanded "><a href="Tome2.html"><strong aria-hidden="true">5.</strong> Tome Four, Git with vengeance</a></li><li class="chapter-item expanded "><a href="Tome4.html"><strong aria-hidden="true">6.</strong> Tome Five, A Wizards Jade</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Wizardintro.html"><strong aria-hidden="true">1.</strong> A Wizards Legacy</a></li><li class="chapter-item expanded "><a href="Tome1.html"><strong aria-hidden="true">2.</strong> Tome one, Terminal trolling</a></li><li class="chapter-item expanded "><a href="Tome22.html"><strong aria-hidden="true">3.</strong> Tome two, Powershell Hexing</a></li><li class="chapter-item expanded "><a href="Tome3.html"><strong aria-hidden="true">4.</strong> Tome three, Embedded magic</a></li><li class="chapter-item expanded "><a href="Tome2.html"><strong aria-hidden="true">5.</strong> Tome Four, Git with vengeance</a></li><li class="chapter-item expanded "><a href="Tome4.html"><strong aria-hidden="true">6.</strong> Tome Five, A Wizards Jade</a></li><li class="chapter-item expanded "><a href="Tome5.html"><strong aria-hidden="true">7.</strong> Tome Six, A Dell Incantation</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -416,6 +416,85 @@ In the above picture we can see an example of the dreaded ZoneId=3</p>
 https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537183(v=vs.85)</p>
 <p>But we can see the structure is the same as the methods used for Safe internet browsing. </p>
 <p>So its been a bit and coming back to this it is making less sense for this to be done from outside the domain. However, I will never discount the method. Its just becoming more and more difficult for people to click enable macro's now that is to say once you make entry on a network being sent from internal is a really nice strat. Doing the OSEP has you do something similar but I enjoy the process of enumerating users via the mail server with manual interaction.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dellservergpufanissue"><a class="header" href="#dellservergpufanissue">DellserverGPUfanissue</a></h1>
+<p>Read my story to fix your issue.</p>
+<p>Sorry for the wizard fun but I hate dry write ups and you can just copy paste and ignore my rambling. </p>
+<h2 id="chapter-1-the-problem"><a class="header" href="#chapter-1-the-problem">Chapter 1, The problem</a></h2>
+<hr />
+<p>Welcome fellow techno sewergoblin. If you found this then you too have put an unsuppored GPU inside of that wonderful dell server you are about to commit unholy sins against in the persuit of the perfect homelab. </p>
+<p>The bad news. That fan sucks mega butts contantly trying to take off with its fans spinning at like 75 to 85 percent for NO REASON.. Well as it turns out there is a reason and I had to ponder some Old arcane tomes to understand the issue.</p>
+<h2 id="chapter-2-pondering-old-orbs"><a class="header" href="#chapter-2-pondering-old-orbs">Chapter 2, Pondering old orbs</a></h2>
+<hr />
+<p>Deep in the back pages of spiceworks fourms. In the year of our lord 2023 I stumbled into this.</p>
+<p>https://community.spiceworks.com/topic/613098-dell-poweredge-server-r7xx-series-fan-speed-with-gpu</p>
+<p>Full of wizard sharing in their woes as one mighty hero would deliver us from our struggles. SUFFER NO MORE this hero said. <em>alexrozentuller</em> you mighty wizard! I salute you.</p>
+<pre><code>Dell traced the issue back to a setting for how they handle unmatched devices.  They were able to run the following IPMI command on my 730's to resolve the issue:
+
+ipmitool.exe -H 172.16.171.21 -U root -P calvin raw 20 30 0x00 ce 0 0x16 5 0 0 0 5 0 1 0 0    &gt; Set Unmatched Logic Disabled
+
+*** USE AT YOUR OWN RISK ***﻿
+
+﻿Dell was very hesitant to provide me with the above command, so it is not official by any means.  I forwarded the details to Teradici under ticket reference: #15134-33400.  ﻿I would give them a ring first.
+
+If that doesnt get you anywhere, i provided my Dell ticket in an earlier post: SER# 81901735650.﻿  See if you can reference that with Dell directly.
+
+Good Luck!
+
+</code></pre>
+<p>As we gaze at this script of old we find the command and values we need.</p>
+<pre><code>ipmitool -I lanplus -H &lt;IP of the IDRAC&gt; -U &lt;user&gt; -P &lt;password&gt; raw 0x30 0xce 0x00 0x16 0x05 0x00 0x00 0x00 0x05 0x00 0x01 0x00 0x00
+</code></pre>
+<p>Ah and here we have a great example of PRIME magic, This is undistilled wizard juice. The good stuff.</p>
+<h2 id="chapter-3-tapping-ancient-power"><a class="header" href="#chapter-3-tapping-ancient-power">Chapter 3, Tapping ancient power</a></h2>
+<hr />
+<p>With our new found words of power we must build our foundation.</p>
+<p>Step 1. Log into your dell IDRAC</p>
+<p>Step 2. Once Logged in on the left hand side under IDRAC Settings, click on User Authentication</p>
+<p>Step 3. Make a user with a password containing no symbols, Down one box should be IPMI USSER PRIVILEGES, set Maximum LAN User Privilege Granted to Administrator.</p>
+<p>Step 4. Hit APPLY</p>
+<p>Step 5. On the Far Left hand side under iDRAC SETTINGS, Select Network, Scroll to the bottom and located the IPMI Settings, check the box for Enable IPMI Over LAN</p>
+<p>Step 6. Hit APPLY</p>
+<p>We have now pregamed the server for IPMI wizard magic. Let us now begin the incantation.</p>
+<h2 id="chapter-4-activating-ancient-power"><a class="header" href="#chapter-4-activating-ancient-power">Chapter 4, Activating ancient power</a></h2>
+<hr />
+<p>I am using Endevour OS, so let me tip my wizard hat because I used arch BTW.</p>
+<pre><code>yay ipmitool  &lt; yay wizards
+
+apt-get install ipmitool &lt; Normal Linux users
+</code></pre>
+<p>if you want to self compile
+https://github.com/ipmitool/ipmitool</p>
+<p>For all my powershell surfers here is the windows Dell support pack 
+https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=w9nmr</p>
+<p>once you have ipmitools let me give a rundown on the actual command, You could spare me this pain and read the man page or the -h but here it is anyway</p>
+<p>ipmitool -I lanplus -H <IP of the IDRAC> -U <user> -P <password> raw 0x30 0xce 0x00 0x16 0x05 0x00 0x00 0x00 0x05 0x00 0x01 0x00 0x00</p>
+<p>-I is the interface method 
+-H is the ip of your iDrac 
+-U is the user with ipmi permissions
+-P is password
+Raw is the data type</p>
+<p>0x30 0xce 0x00 0x16 0x05 0x00 0x00 0x00 0x05 0x00 0x01 0x00 0x00
+This above is Set Third-Party PCIe Card Default Cooling Response Logic To Disabled</p>
+<p>Mad shout out to <em>mikemattran</em> for the Disable, Enable, and Status codes</p>
+<pre><code>Set Third-Party PCIe Card Default Cooling Response Logic To Disabled
+
+ipmitool -I lanplus -H -U -P raw 0x30 0xce 0x00 0x16 0x05 0x00 0x00 0x00 0x05 0x00 0x01 0x00 0x00 
+
+Set Third-Party PCIe Card Default Cooling Response Logic To Enabled
+
+ipmitool -I lanplus -H -U -P raw 0x30 0xce 0x00 0x16 0x05 0x00 0x00 0x00 0x05 0x00 0x00 0x00 0x00 
+
+Get Third-Party PCIe Card Default Cooling Response Logic Status
+
+ipmitool -I lanplus -H -U -P raw 0x30 0xce 0x01 0x16 0x05 0x00 0x00 0x00 
+
+The response data is:
+
+16 05 00 00 00 05 00 01 00 00 (Disabled)
+
+﻿16 05 00 00 00 05 00 00 00 00 (Enabled)
+</code></pre>
+<p>Once the dust settles and peace returns to your wizard homelab. We can all take a deep breath as we are free from the loathsum Dell GPU fan curse.</p>
 
                     </main>
 
