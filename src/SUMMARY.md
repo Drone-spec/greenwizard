@@ -12,3 +12,4 @@
 
 - [Tome Five, A Wizards Jade](Tome4.md)
 
+- [Tome Six, A Dell Incantation](Tome5.md)
