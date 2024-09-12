@@ -4,7 +4,7 @@
 
 ---
 
-## Offensive Focus
+# Offensive Focus
 
 - [Page one, Terminal trolling](Tome1.md)
 
@@ -12,22 +12,21 @@
 
 - [Page three, Git with vengeance](Tome2.md)
 
-## Defensive Focus
+# Defensive Focus
 
 
-## Development Focus
+# Development Focus
 
 - [Page one, Embedded magic](Tome3.md)
 
-## Infrastructure Focus
+# Infrastructure Focus
 
 - [Page one, A Dell Incantation](Tome5.md)
 
-## Forbidden Wizard Magics
+# Forbidden Wizard Magics
 
 
-
-## Yapping Crystal
+# Yapping Crystal
 
 - [Page one, A Wizards Jade](Tome4.md)
 
