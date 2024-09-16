@@ -12,9 +12,6 @@
 
 [Git with vengeance](Tome2.md)
 
-# Defensive Focus
-
-[Booger Goblin](TomeBooger.md)
 
 # Development Focus
 
@@ -32,3 +29,9 @@
 [A Wizards Jade](Tome4.md)
 
 [A tale of Trains](./ics/ics1.md)
+
+
+# Defensive Focus
+
+[Booger Goblin](TomeBooger.md)
+
