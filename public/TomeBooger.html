@@ -171,7 +171,8 @@
 <h3 id="what-makes-a-rule"><a class="header" href="#what-makes-a-rule">What makes a rule</a></h3>
 <p>For snort3 I make a little chart for myself.</p>
 <ul>
-<li>step one   : Rule Action https://docs.snort.org/rules/headers/actions <code>**alert** tcp $EXTERNAL_NET 80 -&gt; $HOME_NET any</code></li>
+<li>step one   : Rule Action https://docs.snort.org/rules/headers/actions <code>**alert** tcp $EXTERNAL_NET 80 -&gt; $HOME_NET any</code>
+<ul>
 <li>alert</li>
 <li>block</li>
 <li>drop</li>
@@ -179,23 +180,37 @@
 <li>react</li>
 <li>reject</li>
 <li>rewrite</li>
-<li>step two   : Protocol https://docs.snort.org/rules/headers/protocols <code>alert **tcp** $EXTERNAL_NET 80 -&gt; $HOME_NET any</code></li>
+</ul>
+</li>
+<li>step two   : Protocol https://docs.snort.org/rules/headers/protocols <code>alert **tcp** $EXTERNAL_NET 80 -&gt; $HOME_NET any</code>
+<ul>
 <li>ip</li>
 <li>icmp</li>
 <li>tcp</li>
 <li>udp</li>
-<li>step three : IP Source / Dest https://docs.snort.org/rules/headers/ips <code>alert tcp **$EXTERNAL_NET** 80 -&gt; **$HOME_NET** any</code></li>
+</ul>
+</li>
+<li>step three : IP Source / Dest https://docs.snort.org/rules/headers/ips <code>alert tcp **$EXTERNAL_NET** 80 -&gt; **$HOME_NET** any</code>
+<ul>
 <li>any</li>
 <li>!192.168.1.1 (Inverse operator)</li>
 <li>[192.168.1.0/24] (Range Operator)</li>
 <li>$TEST (Variable's)</li>
-<li>step four  : Port https://docs.snort.org/rules/headers/ports <code>alert tcp $EXTERNAL_NET **80** -&gt; $HOME_NET **any**</code></li>
+</ul>
+</li>
+<li>step four  : Port https://docs.snort.org/rules/headers/ports <code>alert tcp $EXTERNAL_NET **80** -&gt; $HOME_NET **any**</code>
+<ul>
 <li>any</li>
 <li>$TEST (Variable's )</li>
 <li>: (Range Operator) 1:10 (Between 1 and 10) :100 (Less than or Equal to 100) 100: (Greather than or equal to 100)</li>
-<li>step five  : Direction https://docs.snort.org/rules/headers/directions <code>alert tcp $EXTERNAL_NET 80 **-&gt;** $HOME_NET any</code></li>
+</ul>
+</li>
+<li>step five  : Direction https://docs.snort.org/rules/headers/directions <code>alert tcp $EXTERNAL_NET 80 **-&gt;** $HOME_NET any</code>
+<ul>
 <li>-&gt; Source to Destination</li>
 <li>&lt;&gt; bidirectional</li>
+</ul>
+</li>
 </ul>
 
                     </main>
