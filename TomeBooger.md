@@ -31,7 +31,7 @@ alert tcp $EXTERNAL_NET 80 -> $HOME_NET any
 
 For snort3 I make a little chart for myself.
 
-- step one   : Rule Action https://docs.snort.org/rules/headers/actions `*alert* tcp $EXTERNAL_NET 80 -> $HOME_NET any`
+- step one   : Rule Action https://docs.snort.org/rules/headers/actions `**alert** tcp $EXTERNAL_NET 80 -> $HOME_NET any`
  - alert
  - block
  - drop
@@ -39,20 +39,22 @@ For snort3 I make a little chart for myself.
  - react
  - reject
  - rewrite
-- step two   : Protocol https://docs.snort.org/rules/headers/protocols `alert *tcp* $EXTERNAL_NET 80 -> $HOME_NET any`
+- step two   : Protocol https://docs.snort.org/rules/headers/protocols `alert **tcp** $EXTERNAL_NET 80 -> $HOME_NET any`
  - ip
  - icmp
  - tcp
  - udp
-- step three : IP Source / Dest https://docs.snort.org/rules/headers/ips `alert tcp *$EXTERNAL_NET* 80 -> *$HOME_NET* any`
+- step three : IP Source / Dest https://docs.snort.org/rules/headers/ips `alert tcp **$EXTERNAL_NET** 80 -> **$HOME_NET** any`
  - any
  - !192.168.1.1 (Inverse operator)
  - \[192.168.1.0/24\] (Range Operator)
  - $TEST (Variable's)
-- step four  : Port
+- step four  : Port https://docs.snort.org/rules/headers/ports `alert tcp $EXTERNAL_NET **80** -> $HOME_NET **any**`
  - any
  - $TEST (Variable's )
  - : (Range Operator) 1:10 (Between 1 and 10) :100 (Less than or Equal to 100) 100: (Greather than or equal to 100)
-- step five  : Direction 
+- step five  : Direction https://docs.snort.org/rules/headers/directions `alert tcp $EXTERNAL_NET 80 **->** $HOME_NET any`
+ - -> Source to Destination
+ - <> bidirectional 
 
 
