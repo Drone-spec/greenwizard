@@ -4,46 +4,49 @@
 
 ---
 
-# Offensive Focus
+- [Offensive Focus]()
 
-[Terminal trolling](Tome1.md)
+  - [Terminal trolling](Tome1.md)
 
-[Powershell Hexing](Tome22.md)
+  - [Powershell Hexing](Tome22.md)
 
-[Git with vengeance](Tome2.md)
-
-
----
-
-# Development Focus
-
-[Embedded magic](Tome3.md)
+  - [Git with vengeance](Tome2.md)
 
 
 ---
 
-# Infrastructure Focus
+- [Defensive Focus]()
 
-[A Dell Incantation](Tome5.md)
-
----
-
-# Forbidden Wizard Magics
-
-
+  - [Booger Goblin](TomeBooger.md)
 
 ---
 
-# Yapping Crystal
+- [Development Focus]()
 
-[A Wizards Jade](Tome4.md)
-
-[A tale of Trains](./ics/ics1.md)
+  - [Embedded magic](Tome3.md)
 
 
 ---
 
-# Defensive Focus
+- [Infrastructure Focus]()
 
-[Booger Goblin](TomeBooger.md)
+  - [A Dell Incantation](Tome5.md)
+
+---
+
+- [Forbidden Wizard Magics]()
+
+  - [PlaceHolder]()
+
+---
+
+- [Yapping Crystal]()
+
+  - [A Wizards Jade](Tome4.md)
+
+  - [A tale of Trains](./ics/ics1.md)
+
+
+---
+
 
