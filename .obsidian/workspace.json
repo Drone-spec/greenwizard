@@ -13,10 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tome5.md",
+                "file": "src/Tomeqemu.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Tomeqemu"
             }
           }
         ]
@@ -39,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -54,7 +58,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,7 +68,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -93,7 +101,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Tome5"
             }
           },
           {
@@ -105,7 +115,9 @@
                 "file": "Tome5.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Tome5"
             }
           },
           {
@@ -116,7 +128,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -126,7 +140,9 @@
               "type": "outline",
               "state": {
                 "file": "Tome5.md"
-              }
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Tome5"
             }
           },
           {
@@ -138,7 +154,9 @@
                 "sortOrder": "frequency",
                 "showSearch": false,
                 "searchQuery": ""
-              }
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
             }
           }
         ]
@@ -165,8 +183,9 @@
   "active": "c9265d328c46663d",
   "lastOpenFiles": [
     "src/Tome22.md",
-    "Tome5.md",
     "src/Tome4.md",
+    "src/Tomeqemu.md",
+    "Tome5.md",
     "src/SUMMARY.md",
     "Excalidraw/Drawing 2024-02-12 13.50.21.excalidraw.md",
     "Excalidraw",
@@ -209,7 +228,6 @@
     "src/certs/oswp/First Exam.md",
     "src/certs/osep/Training.md",
     "src/battelle/Intro.md",
-    "src/battelle/NETWORK.excalidraw.md",
     "book/certs/oscp/Current/Mindmap.canvas",
     "bulk/Prolab Graph.canvas"
   ]
