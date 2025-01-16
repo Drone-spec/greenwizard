@@ -31,7 +31,7 @@
 - [Infrastructure Focus]()
 
   - [A Dell Incantation](Tome5.md)
-
+  - [Qemu conundrum](Tomeqemu.md)
 ---
 
 - [Forbidden Wizard Magics]()
